@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="Dobavljaci_IzmjenaPageDef"
+                Package="hr.fipo.zalihe.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator id="DobavljaciView1Iterator" Binds="DobavljaciView1" DataControl="zaliheAMDataControl" RangeSize="25"/>
+    <variableIterator id="variables"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="DobavljaciView1Iterator" id="Sifra">
+      <AttrNames>
+        <Item Value="Sifra"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DobavljaciView1Iterator" id="Naziv">
+      <AttrNames>
+        <Item Value="Naziv"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DobavljaciView1Iterator" id="Adresa">
+      <AttrNames>
+        <Item Value="Adresa"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DobavljaciView1Iterator" id="UserDodavanja">
+      <AttrNames>
+        <Item Value="UserDodavanja"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DobavljaciView1Iterator" id="DatumDodavanja">
+      <AttrNames>
+        <Item Value="DatumDodavanja"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DobavljaciView1Iterator" id="UserIzmjene">
+      <AttrNames>
+        <Item Value="UserIzmjene"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DobavljaciView1Iterator" id="DatumIzmjene">
+      <AttrNames>
+        <Item Value="DatumIzmjene"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

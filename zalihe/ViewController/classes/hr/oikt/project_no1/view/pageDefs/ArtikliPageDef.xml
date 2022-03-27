@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="ArtikliPageDef"
+                Package="hr.oikt.project_no1.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ArtikliVO1" RangeSize="25" DataControl="no1_AMDataControl" id="ArtikliVO1Iterator"/>
+    <searchRegion Binds="ArtikliVO1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="ArtikliVO1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ArtikliVO1Iterator" id="ArtikliVO1">
+      <nodeDefinition DefName="hr.oikt.project_no1.model.vo.ArtikliVO" Name="ArtikliVO10">
+        <AttrNames>
+          <Item Value="Sifra"/>
+          <Item Value="Naziv"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="UserIzmjene"/>
+          <Item Value="DatumIzmjene"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

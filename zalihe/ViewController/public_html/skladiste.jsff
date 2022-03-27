@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<composition xmlns="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+             xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="bottom">
+      <af:panelGroupLayout id="pgl1">
+        <af:commandButton text="Izlaz" id="cb4" action="go_izlaz" icon="/resources/images/Natrag.png"/>
+        <af:commandButton text="Izmjeni" id="cb2" action="go_skladiste_izmjena" icon="/resources/images/Izmjeni.png"/>
+        <af:commandButton text="Obriši" id="cb3" action="go_delete_table" icon="/resources/images/Obrisi.png"/>
+        <af:commandButton text="Dodaj" id="cb1" action="go_create" icon="/resources/images/Dodaj.png"/>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="center">
+      <af:table value="#{bindings.SkladistaView1.collectionModel}" var="row" rows="#{bindings.SkladistaView1.rangeSize}"
+                emptyText="#{bindings.SkladistaView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                fetchSize="#{bindings.SkladistaView1.rangeSize}" rowBandingInterval="0"
+                filterModel="#{bindings.SkladistaView1Query.queryDescriptor}"
+                queryListener="#{bindings.SkladistaView1Query.processQuery}" filterVisible="true" varStatus="vs"
+                selectedRowKeys="#{bindings.SkladistaView1.collectionModel.selectedRow}"
+                selectionListener="#{bindings.SkladistaView1.collectionModel.makeCurrent}" rowSelection="single" id="t1">
+        <af:column sortProperty="#{bindings.SkladistaView1.hints.Id}" filterable="true" sortable="true"
+                   headerText="#{bindings.SkladistaView1.hints.Id.label}" id="c5">
+          <af:inputText value="#{row.bindings.Id.inputValue}" label="#{bindings.SkladistaView1.hints.Id.label}"
+                        required="#{bindings.SkladistaView1.hints.Id.mandatory}"
+                        columns="#{bindings.SkladistaView1.hints.Id.displayWidth}"
+                        maximumLength="#{bindings.SkladistaView1.hints.Id.precision}"
+                        shortDesc="#{bindings.SkladistaView1.hints.Id.tooltip}" id="it2">
+            <f:validator binding="#{row.bindings.Id.validator}"/>
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.SkladistaView1.hints.Id.format}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.SkladistaView1.hints.Sifra}" filterable="true" sortable="true"
+                   headerText="#{bindings.SkladistaView1.hints.Sifra.label}" id="c1">
+          <af:inputText value="#{row.bindings.Sifra.inputValue}" label="#{bindings.SkladistaView1.hints.Sifra.label}"
+                        required="#{bindings.SkladistaView1.hints.Sifra.mandatory}"
+                        columns="#{bindings.SkladistaView1.hints.Sifra.displayWidth}"
+                        maximumLength="#{bindings.SkladistaView1.hints.Sifra.precision}"
+                        shortDesc="#{bindings.SkladistaView1.hints.Sifra.tooltip}" id="it3">
+            <f:validator binding="#{row.bindings.Sifra.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.SkladistaView1.hints.Naziv}" filterable="true" sortable="true"
+                   headerText="#{bindings.SkladistaView1.hints.Naziv.label}" id="c4">
+          <af:inputText value="#{row.bindings.Naziv.inputValue}" label="#{bindings.SkladistaView1.hints.Naziv.label}"
+                        required="#{bindings.SkladistaView1.hints.Naziv.mandatory}"
+                        columns="#{bindings.SkladistaView1.hints.Naziv.displayWidth}"
+                        maximumLength="#{bindings.SkladistaView1.hints.Naziv.precision}"
+                        shortDesc="#{bindings.SkladistaView1.hints.Naziv.tooltip}" id="it5">
+            <f:validator binding="#{row.bindings.Naziv.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.SkladistaView1.hints.UserDodavanja}" filterable="true" sortable="true"
+                   headerText="#{bindings.SkladistaView1.hints.UserDodavanja.label}" id="c7">
+          <af:inputText value="#{row.bindings.UserDodavanja.inputValue}"
+                        label="#{bindings.SkladistaView1.hints.UserDodavanja.label}"
+                        required="#{bindings.SkladistaView1.hints.UserDodavanja.mandatory}"
+                        columns="#{bindings.SkladistaView1.hints.UserDodavanja.displayWidth}"
+                        maximumLength="#{bindings.SkladistaView1.hints.UserDodavanja.precision}"
+                        shortDesc="#{bindings.SkladistaView1.hints.UserDodavanja.tooltip}" id="it1">
+            <f:validator binding="#{row.bindings.UserDodavanja.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.SkladistaView1.hints.DatumDodavanja}" filterable="true" sortable="true"
+                   headerText="#{bindings.SkladistaView1.hints.DatumDodavanja.label}" id="c6">
+          <f:facet name="filter">
+            <af:inputDate value="#{bindings.SkladistaView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DatumDodavanja.value}"
+                          id="id1">
+              <af:convertDateTime pattern="#{bindings.SkladistaView1.hints.DatumDodavanja.format}"/>
+            </af:inputDate>
+          </f:facet>
+          <af:inputDate value="#{row.bindings.DatumDodavanja.inputValue}"
+                        label="#{bindings.SkladistaView1.hints.DatumDodavanja.label}"
+                        required="#{bindings.SkladistaView1.hints.DatumDodavanja.mandatory}"
+                        columns="#{bindings.SkladistaView1.hints.DatumDodavanja.displayWidth}"
+                        shortDesc="#{bindings.SkladistaView1.hints.DatumDodavanja.tooltip}" id="id4">
+            <f:validator binding="#{row.bindings.DatumDodavanja.validator}"/>
+            <af:convertDateTime pattern="#{bindings.SkladistaView1.hints.DatumDodavanja.format}"/>
+          </af:inputDate>
+        </af:column>
+        <af:column sortProperty="#{bindings.SkladistaView1.hints.UserIzmjene}" filterable="true" sortable="true"
+                   headerText="#{bindings.SkladistaView1.hints.UserIzmjene.label}" id="c3">
+          <af:inputText value="#{row.bindings.UserIzmjene.inputValue}"
+                        label="#{bindings.SkladistaView1.hints.UserIzmjene.label}"
+                        required="#{bindings.SkladistaView1.hints.UserIzmjene.mandatory}"
+                        columns="#{bindings.SkladistaView1.hints.UserIzmjene.displayWidth}"
+                        maximumLength="#{bindings.SkladistaView1.hints.UserIzmjene.precision}"
+                        shortDesc="#{bindings.SkladistaView1.hints.UserIzmjene.tooltip}" id="it4">
+            <f:validator binding="#{row.bindings.UserIzmjene.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.SkladistaView1.hints.DatumIzmjene}" filterable="true" sortable="true"
+                   headerText="#{bindings.SkladistaView1.hints.DatumIzmjene.label}" id="c2">
+          <f:facet name="filter">
+            <af:inputDate value="#{bindings.SkladistaView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DatumIzmjene.value}"
+                          id="id3">
+              <af:convertDateTime pattern="#{bindings.SkladistaView1.hints.DatumIzmjene.format}"/>
+            </af:inputDate>
+          </f:facet>
+          <af:inputDate value="#{row.bindings.DatumIzmjene.inputValue}"
+                        label="#{bindings.SkladistaView1.hints.DatumIzmjene.label}"
+                        required="#{bindings.SkladistaView1.hints.DatumIzmjene.mandatory}"
+                        columns="#{bindings.SkladistaView1.hints.DatumIzmjene.displayWidth}"
+                        shortDesc="#{bindings.SkladistaView1.hints.DatumIzmjene.tooltip}" id="id2">
+            <f:validator binding="#{row.bindings.DatumIzmjene.validator}"/>
+            <af:convertDateTime pattern="#{bindings.SkladistaView1.hints.DatumIzmjene.format}"/>
+          </af:inputDate>
+        </af:column>
+      </af:table>
+    </f:facet>
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top">
+      <af:outputText value="Prikaz skladišta" id="ot1"
+                     inlineStyle="color:Navy; font-size:x-large; font-family:Georgia, 'Times New Roman', times, Serif;"/>
+    </f:facet>
+  </af:panelStretchLayout>
+</composition>

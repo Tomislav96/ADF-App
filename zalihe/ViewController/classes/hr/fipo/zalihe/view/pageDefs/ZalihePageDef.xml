@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="ZalihePageDef"
+                Package="hr.fipo.zalihe.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ZalihaView1" RangeSize="10" DataControl="zaliheAMDataControl" id="ZalihaView1Iterator"/>
+    <iterator Binds="ZalihaView1" RangeSize="10" DataControl="zaliheAMDataControl" id="ZalihaView1Iterator1"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ZalihaView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ZalihaView1Iterator" id="IdSkladista">
+      <AttrNames>
+        <Item Value="IdSkladista"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ZalihaView1Iterator" id="IdArtikla">
+      <AttrNames>
+        <Item Value="IdArtikla"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ZalihaView1Iterator" id="Kolicina">
+      <AttrNames>
+        <Item Value="Kolicina"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ZalihaView1Iterator" id="ProsjecnaCijena">
+      <AttrNames>
+        <Item Value="ProsjecnaCijena"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ZalihaView1Iterator" id="UserDodavanja">
+      <AttrNames>
+        <Item Value="UserDodavanja"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ZalihaView1Iterator" id="DatumDodavanja">
+      <AttrNames>
+        <Item Value="DatumDodavanja"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ZalihaView1Iterator" id="UserIzmjene">
+      <AttrNames>
+        <Item Value="UserIzmjene"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="ZalihaView1Iterator1" id="ZalihaView1">
+      <nodeDefinition DefName="hr.fipo.zalihe.model.vo.ZalihaVO" Name="ZalihaView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="DatumIzmjene"/>
+          <Item Value="IdArtikla"/>
+          <Item Value="IdSkladista"/>
+          <Item Value="Kolicina"/>
+          <Item Value="ProsjecnaCijena"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="UserIzmjene"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

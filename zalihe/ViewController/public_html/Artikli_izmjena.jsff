@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+  <af:decorativeBox id="db1">
+    <f:facet name="center">
+      <af:panelFormLayout id="pfl1">
+        <af:panelGroupLayout id="pgl1"/>
+        <af:inputText value="#{bindings.Sifra.inputValue}" label="#{bindings.Sifra.hints.label}"
+                      required="#{bindings.Sifra.hints.mandatory}" columns="#{bindings.Sifra.hints.displayWidth}"
+                      maximumLength="#{bindings.Sifra.hints.precision}" shortDesc="#{bindings.Sifra.hints.tooltip}"
+                      id="it7">
+          <f:validator binding="#{bindings.Sifra.validator}"/>
+        </af:inputText>
+        <af:selectOneChoice value="#{bindings.Naziv.inputValue}" label="#{bindings.Naziv.label}"
+                            required="#{bindings.Naziv.hints.mandatory}" shortDesc="#{bindings.Naziv.hints.tooltip}"
+                            id="soc1">
+          <f:selectItems value="#{bindings.Naziv.items}" id="si1"/>
+          <f:validator binding="#{bindings.Naziv.validator}"/>
+        </af:selectOneChoice>
+        <af:inputText value="#{bindings.UserDodavanja.inputValue}" label="#{bindings.UserDodavanja.hints.label}"
+                      required="#{bindings.UserDodavanja.hints.mandatory}"
+                      columns="#{bindings.UserDodavanja.hints.displayWidth}"
+                      maximumLength="#{bindings.UserDodavanja.hints.precision}"
+                      shortDesc="#{bindings.UserDodavanja.hints.tooltip}" id="it5">
+          <f:validator binding="#{bindings.UserDodavanja.validator}"/>
+        </af:inputText>
+        <af:inputDate value="#{bindings.DatumDodavanja.inputValue}" label="#{bindings.DatumDodavanja.hints.label}"
+                      required="#{bindings.DatumDodavanja.hints.mandatory}"
+                      columns="#{bindings.DatumDodavanja.hints.displayWidth}"
+                      shortDesc="#{bindings.DatumDodavanja.hints.tooltip}" id="id4">
+          <f:validator binding="#{bindings.DatumDodavanja.validator}"/>
+          <af:convertDateTime pattern="#{bindings.DatumDodavanja.format}"/>
+        </af:inputDate>
+        <af:inputText value="#{bindings.UserIzmjene.inputValue}" label="#{bindings.UserIzmjene.hints.label}"
+                      required="#{bindings.UserIzmjene.hints.mandatory}"
+                      columns="#{bindings.UserIzmjene.hints.displayWidth}"
+                      maximumLength="#{bindings.UserIzmjene.hints.precision}"
+                      shortDesc="#{bindings.UserIzmjene.hints.tooltip}" id="it8">
+          <f:validator binding="#{bindings.UserIzmjene.validator}"/>
+        </af:inputText>
+        <af:inputDate value="#{bindings.DatumIzmjene.inputValue}" label="#{bindings.DatumIzmjene.hints.label}"
+                      required="#{bindings.DatumIzmjene.hints.mandatory}"
+                      columns="#{bindings.DatumIzmjene.hints.displayWidth}"
+                      shortDesc="#{bindings.DatumIzmjene.hints.tooltip}" id="id3">
+          <f:validator binding="#{bindings.DatumIzmjene.validator}"/>
+          <af:convertDateTime pattern="#{bindings.DatumIzmjene.format}"/>
+        </af:inputDate>
+        <af:commandButton text="Natrag" id="cb1" action="go_artikli" icon="/resources/images/Natrag.png"
+                          immediate="true"/>
+        <af:commandButton text="Spremi" id="cb2" action="go_commit" icon="/resources/images/Spremi.png"/>
+      </af:panelFormLayout>
+    </f:facet>
+    <f:facet name="top">
+      <af:outputText value="Izmjena artikla" id="ot1"
+                     inlineStyle="color:Navy; font-size:x-large; font-family:Georgia, 'Times New Roman', times, Serif;"/>
+    </f:facet>
+  </af:decorativeBox>
+</ui:composition>

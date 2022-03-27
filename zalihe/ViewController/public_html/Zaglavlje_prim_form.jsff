@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="bottom">
+      <af:panelGroupLayout id="pgl1">
+        <af:commandButton text="Natrag" id="cb1" action="go_zaglavlje" icon="/resources/images/Natrag.png"
+                          immediate="true"/>
+        <af:commandButton text="Spremi" id="cb2" action="go_commit" icon="/resources/images/Spremi.png"/>
+        <af:commandButton text="Potvrdi" id="cb3" icon="/resources/images/Potvrdii.png">
+          <af:setPropertyListener from="D" to="#{bindings.OznakaPotvrde.inputValue}" type="action"/>
+        </af:commandButton>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="center">
+      <af:panelFormLayout id="pfl1">
+        <af:selectOneChoice value="#{bindings.IdDobavljaca.inputValue}" label="Dobavljač"
+                            required="#{bindings.IdDobavljaca.hints.mandatory}"
+                            shortDesc="#{bindings.IdDobavljaca.hints.tooltip}" id="soc1">
+          <f:selectItems value="#{bindings.IdDobavljaca.items}" id="si1"/>
+        </af:selectOneChoice>
+        <af:selectOneChoice value="#{bindings.IdSkladista.inputValue}" label="Skladište"
+                            required="#{bindings.IdSkladista.hints.mandatory}"
+                            shortDesc="#{bindings.IdSkladista.hints.tooltip}" id="soc2">
+          <f:selectItems value="#{bindings.IdSkladista.items}" id="si2"/>
+        </af:selectOneChoice>
+        <af:inputText value="#{bindings.Broj.inputValue}" label="#{bindings.Broj.hints.label}"
+                      required="#{bindings.Broj.hints.mandatory}" columns="#{bindings.Broj.hints.displayWidth}"
+                      maximumLength="#{bindings.Broj.hints.precision}" shortDesc="#{bindings.Broj.hints.tooltip}"
+                      id="it1">
+          <f:validator binding="#{bindings.Broj.validator}"/>
+        </af:inputText>
+        <af:inputDate value="#{bindings.Datum.inputValue}" label="#{bindings.Datum.hints.label}"
+                      required="#{bindings.Datum.hints.mandatory}" columns="#{bindings.Datum.hints.displayWidth}"
+                      shortDesc="#{bindings.Datum.hints.tooltip}" id="id1">
+          <f:validator binding="#{bindings.Datum.validator}"/>
+          <af:convertDateTime pattern="#{bindings.Datum.format}"/>
+        </af:inputDate>
+        <af:inputText value="#{bindings.Opis.inputValue}" label="#{bindings.Opis.hints.label}"
+                      required="#{bindings.Opis.hints.mandatory}" columns="#{bindings.Opis.hints.displayWidth}"
+                      maximumLength="#{bindings.Opis.hints.precision}" shortDesc="#{bindings.Opis.hints.tooltip}"
+                      id="it2">
+          <f:validator binding="#{bindings.Opis.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.OznakaPotvrde.inputValue}" label="#{bindings.OznakaPotvrde.hints.label}"
+                      required="#{bindings.OznakaPotvrde.hints.mandatory}"
+                      columns="#{bindings.OznakaPotvrde.hints.displayWidth}"
+                      maximumLength="#{bindings.OznakaPotvrde.hints.precision}"
+                      shortDesc="#{bindings.OznakaPotvrde.hints.tooltip}" id="it3" inlineStyle="height:1cm; width:2cm;">
+          <f:validator binding="#{bindings.OznakaPotvrde.validator}"/>
+        </af:inputText>
+      </af:panelFormLayout>
+    </f:facet>
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top">
+      <af:outputText value="Primka zaglavlje" id="ot1"
+                     inlineStyle="color:Navy; font-size:x-large; font-family:Georgia, 'Times New Roman', times, Serif;"/>
+    </f:facet>
+  </af:panelStretchLayout>
+</ui:composition>

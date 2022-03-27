@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14"
+                id="MjestoTroska_btf_MjestoTroska_btf_CreateInsertPageDef" Package="hr.fipo.zalihe.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="MjestaTroskaView1" RangeSize="10" DataControl="zaliheAMDataControl"
+              id="MjestaTroskaView1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="MjestaTroskaView1Iterator" id="CreateInsert"
+            InstanceName="zaliheAMDataControl.MjestaTroskaView1" DataControl="zaliheAMDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

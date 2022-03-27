@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PriStaArtFkLink"
+  Version="11.1.1.64.93"
+  EntityAssociation="hr.fipo.zalihe.model.eo.assoc.PriStaArtFkAssoc">
+  <ViewLinkDefEnd
+    Name="ArtikliView"
+    Cardinality="1"
+    Owner="hr.fipo.zalihe.model.vo.ArtikliVO"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="ArtikliView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fipo.zalihe.model.vo.ArtikliVO.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="PrimkeStavkeView"
+    Cardinality="-1"
+    Owner="hr.fipo.zalihe.model.vo.PrimkeStavkeVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="PrimkeStavkeView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fipo.zalihe.model.vo.PrimkeStavkeVO.IdArtikla"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

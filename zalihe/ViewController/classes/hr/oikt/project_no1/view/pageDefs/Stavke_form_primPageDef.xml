@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="Stavke_form_primPageDef"
+                Package="hr.oikt.project_no1.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PrimkaStaView2" RangeSize="25" DataControl="no1_AMDataControl" id="PrimkaStaView2Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="PrimkaStaView2Iterator" StaticList="false" Uses="LOV_IdPrimke" id="IdPrimke"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="PrimkaStaView2Iterator" StaticList="false" Uses="LOV_IdArtikla" id="IdArtikla"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="PrimkaStaView2Iterator" id="Kolicina">
+      <AttrNames>
+        <Item Value="Kolicina"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimkaStaView2Iterator" id="NabavnaCijena">
+      <AttrNames>
+        <Item Value="NabavnaCijena"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimkaStaView2Iterator" id="UserDodavanja">
+      <AttrNames>
+        <Item Value="UserDodavanja"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimkaStaView2Iterator" id="DatumDodavanja">
+      <AttrNames>
+        <Item Value="DatumDodavanja"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimkaStaView2Iterator" id="UserIzmjene">
+      <AttrNames>
+        <Item Value="UserIzmjene"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimkaStaView2Iterator" id="DatumIzmjene">
+      <AttrNames>
+        <Item Value="DatumIzmjene"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:h="http://java.sun.com/jsf/html">
+    <af:document title="no1_home.jsf" id="d1">
+        <af:panelStretchLayout id="psl1" topHeight="239px" startWidth="444px" endWidth="362px">
+            <f:facet name="bottom"/>
+            <f:facet name="center">
+                <af:form id="f1" inlineStyle="margin:0px 0px 250px 0px;">
+                    <af:region value="#{bindings.pocetnabtf1.regionModel}" id="r1"
+                               inlineStyle="padding:25px; margin:0px 390px;"/>
+                </af:form>
+            </f:facet>
+            <f:facet name="start"/>
+            <f:facet name="end"/>
+            <f:facet name="top">
+                <h:graphicImage library="images/" name="4-men-1-woman.jpg" id="gi1" style="margin:0px 260px 0px;"/>
+            </f:facet>
+        </af:panelStretchLayout>
+    </af:document>
+</f:view>

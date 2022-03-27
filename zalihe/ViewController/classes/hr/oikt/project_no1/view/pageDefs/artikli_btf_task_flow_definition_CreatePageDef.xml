@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36"
+                id="artikli_btf_task_flow_definition_CreatePageDef" Package="hr.oikt.project_no1.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="ArtikliVO1" RangeSize="25" DataControl="no1_AMDataControl" id="ArtikliVO1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="ArtikliVO1Iterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+  </bindings>
+</pageDefinition>

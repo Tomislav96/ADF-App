@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="skladiste_detPageDef"
+                Package="hr.oikt.project_no1.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SkladistaVO1" RangeSize="25" DataControl="no1_AMDataControl" id="SkladistaVO1Iterator"
+              ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="SkladistaVO1Iterator" id="Sifra">
+      <AttrNames>
+        <Item Value="Sifra"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SkladistaVO1Iterator" id="Naziv">
+      <AttrNames>
+        <Item Value="Naziv"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SkladistaVO1Iterator" id="UserDodavanja">
+      <AttrNames>
+        <Item Value="UserDodavanja"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SkladistaVO1Iterator" id="DatumDodavanja">
+      <AttrNames>
+        <Item Value="DatumDodavanja"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SkladistaVO1Iterator" id="UserIzmjene">
+      <AttrNames>
+        <Item Value="UserIzmjene"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SkladistaVO1Iterator" id="DatumIzmjene">
+      <AttrNames>
+        <Item Value="DatumIzmjene"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SkladistaEO"
+  Version="12.2.1.9.14"
+  DBObjectType="table"
+  DBObjectName="SKLADISTA"
+  AliasName="Skladista"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    Precision="10"
+    Scale="0"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="SKLADISTA"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    RetrievedOnInsert="true"/>
+  <Attribute
+    Name="Sifra"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="10"
+    ColumnName="SIFRA"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SKLADISTA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Naziv"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="NAZIV"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SKLADISTA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UserDodavanja"
+    Precision="30"
+    ColumnName="USER_DODAVANJA"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SKLADISTA"
+    IsUpdateable="false"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DatumDodavanja"
+    ColumnName="DATUM_DODAVANJA"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="DATE"
+    TableName="SKLADISTA"
+    IsUpdateable="false"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
+  <Attribute
+    Name="UserIzmjene"
+    Precision="30"
+    ColumnName="USER_IZMJENE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SKLADISTA"
+    IsUpdateable="false"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DatumIzmjene"
+    ColumnName="DATUM_IZMJENE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="DATE"
+    TableName="SKLADISTA"
+    IsUpdateable="false"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
+  <AccessorAttribute
+    Name="IzdatniceZaglavlje"
+    Association="hr.fipo.zalihe.model.eo.assoc.IzdZagSklFkAssoc"
+    AssociationEnd="hr.fipo.zalihe.model.eo.assoc.IzdZagSklFkAssoc.IzdatniceZaglavlje"
+    AssociationOtherEnd="hr.fipo.zalihe.model.eo.assoc.IzdZagSklFkAssoc.Skladista"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="PrimkeZaglavlje"
+    Association="hr.fipo.zalihe.model.eo.assoc.PriZagSklFkAssoc"
+    AssociationEnd="hr.fipo.zalihe.model.eo.assoc.PriZagSklFkAssoc.PrimkeZaglavlje"
+    AssociationOtherEnd="hr.fipo.zalihe.model.eo.assoc.PriZagSklFkAssoc.Skladista"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Zaliha"
+    Association="hr.fipo.zalihe.model.eo.assoc.ZalSklFkAssoc"
+    AssociationEnd="hr.fipo.zalihe.model.eo.assoc.ZalSklFkAssoc.Zaliha"
+    AssociationOtherEnd="hr.fipo.zalihe.model.eo.assoc.ZalSklFkAssoc.Skladista"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SklNazivUk">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SKL_NAZIV_UK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fipo.zalihe.model.eo.SkladistaEO.Naziv"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SklPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SKL_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fipo.zalihe.model.eo.SkladistaEO.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SklSifraUk">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SKL_SIFRA_UK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fipo.zalihe.model.eo.SkladistaEO.Sifra"/>
+    </AttrArray>
+  </Key>
+</Entity>

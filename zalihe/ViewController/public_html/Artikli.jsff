@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+  <af:panelStretchLayout id="psl1" startWidth="576px">
+    <f:facet name="bottom">
+      <af:panelGroupLayout id="pgl1" inlineStyle="margin:0px 0px 0px; padding:0px;">
+        <af:commandButton text="Izlaz" id="cb4" action="go_izlaz" icon="/resources/images/Natrag.png"/>
+        <af:commandButton text="Izmjeni" id="cb2" action="go_artikli_izmjeni" icon="/resources/images/Izmjeni.png"/>
+        <af:commandButton text="Obriši" id="cb3" action="go_delete" icon="/resources/images/Obrisi.png"/>
+        <af:commandButton text="Dodaj" id="cb1" action="go_insert" icon="/resources/images/Dodaj.png"/>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="center">
+      <af:table value="#{bindings.ArtikliView1.collectionModel}" var="row" rows="#{bindings.ArtikliView1.rangeSize}"
+                emptyText="#{bindings.ArtikliView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                fetchSize="#{bindings.ArtikliView1.rangeSize}" rowBandingInterval="0"
+                filterModel="#{bindings.ArtikliView1Query.queryDescriptor}"
+                queryListener="#{bindings.ArtikliView1Query.processQuery}" filterVisible="true" varStatus="vs"
+                selectedRowKeys="#{bindings.ArtikliView1.collectionModel.selectedRow}"
+                selectionListener="#{bindings.ArtikliView1.collectionModel.makeCurrent}" rowSelection="single" id="t1">
+        <af:column sortProperty="#{bindings.ArtikliView1.hints.Sifra.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.ArtikliView1.hints.Sifra.label}" id="c5">
+          <af:inputText value="#{row.bindings.Sifra.inputValue}" label="#{bindings.ArtikliView1.hints.Sifra.label}"
+                        required="#{bindings.ArtikliView1.hints.Sifra.mandatory}"
+                        columns="#{bindings.ArtikliView1.hints.Sifra.displayWidth}"
+                        maximumLength="#{bindings.ArtikliView1.hints.Sifra.precision}"
+                        shortDesc="#{bindings.ArtikliView1.hints.Sifra.tooltip}" id="it1">
+            <f:validator binding="#{row.bindings.Sifra.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.ArtikliView1.hints.Naziv}" filterable="true" sortable="true"
+                   headerText="#{bindings.ArtikliView1.hints.Naziv.label}" id="c2">
+          <af:selectOneChoice value="#{row.bindings.Naziv.inputValue}" label="#{row.bindings.Naziv.label}"
+                              required="#{bindings.ArtikliView1.hints.Naziv.mandatory}"
+                              shortDesc="#{bindings.ArtikliView1.hints.Naziv.tooltip}" id="soc1">
+            <f:selectItems value="#{row.bindings.Naziv.items}" id="si1"/>
+            <f:validator binding="#{row.bindings.Naziv.validator}"/>
+          </af:selectOneChoice>
+        </af:column>
+        <af:column sortProperty="#{bindings.ArtikliView1.hints.UserDodavanja.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.ArtikliView1.hints.UserDodavanja.label}" id="c6">
+          <af:inputText value="#{row.bindings.UserDodavanja.inputValue}"
+                        label="#{bindings.ArtikliView1.hints.UserDodavanja.label}"
+                        required="#{bindings.ArtikliView1.hints.UserDodavanja.mandatory}"
+                        columns="#{bindings.ArtikliView1.hints.UserDodavanja.displayWidth}"
+                        maximumLength="#{bindings.ArtikliView1.hints.UserDodavanja.precision}"
+                        shortDesc="#{bindings.ArtikliView1.hints.UserDodavanja.tooltip}" id="it3">
+            <f:validator binding="#{row.bindings.UserDodavanja.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.ArtikliView1.hints.DatumDodavanja.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.ArtikliView1.hints.DatumDodavanja.label}" id="c4">
+          <f:facet name="filter">
+            <af:inputDate value="#{bindings.ArtikliView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DatumDodavanja.value}"
+                          id="id4">
+              <af:convertDateTime pattern="#{bindings.ArtikliView1.hints.DatumDodavanja.format}"/>
+            </af:inputDate>
+          </f:facet>
+          <af:inputDate value="#{row.bindings.DatumDodavanja.inputValue}"
+                        label="#{bindings.ArtikliView1.hints.DatumDodavanja.label}"
+                        required="#{bindings.ArtikliView1.hints.DatumDodavanja.mandatory}"
+                        columns="#{bindings.ArtikliView1.hints.DatumDodavanja.displayWidth}"
+                        shortDesc="#{bindings.ArtikliView1.hints.DatumDodavanja.tooltip}" id="id1">
+            <f:validator binding="#{row.bindings.DatumDodavanja.validator}"/>
+            <af:convertDateTime pattern="#{bindings.ArtikliView1.hints.DatumDodavanja.format}"/>
+          </af:inputDate>
+        </af:column>
+        <af:column sortProperty="#{bindings.ArtikliView1.hints.UserIzmjene.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.ArtikliView1.hints.UserIzmjene.label}" id="c7">
+          <af:inputText value="#{row.bindings.UserIzmjene.inputValue}"
+                        label="#{bindings.ArtikliView1.hints.UserIzmjene.label}"
+                        required="#{bindings.ArtikliView1.hints.UserIzmjene.mandatory}"
+                        columns="#{bindings.ArtikliView1.hints.UserIzmjene.displayWidth}"
+                        maximumLength="#{bindings.ArtikliView1.hints.UserIzmjene.precision}"
+                        shortDesc="#{bindings.ArtikliView1.hints.UserIzmjene.tooltip}" id="it2">
+            <f:validator binding="#{row.bindings.UserIzmjene.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.ArtikliView1.hints.DatumIzmjene.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.ArtikliView1.hints.DatumIzmjene.label}" id="c3">
+          <f:facet name="filter">
+            <af:inputDate value="#{bindings.ArtikliView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DatumIzmjene.value}"
+                          id="id3">
+              <af:convertDateTime pattern="#{bindings.ArtikliView1.hints.DatumIzmjene.format}"/>
+            </af:inputDate>
+          </f:facet>
+          <af:inputDate value="#{row.bindings.DatumIzmjene.inputValue}"
+                        label="#{bindings.ArtikliView1.hints.DatumIzmjene.label}"
+                        required="#{bindings.ArtikliView1.hints.DatumIzmjene.mandatory}"
+                        columns="#{bindings.ArtikliView1.hints.DatumIzmjene.displayWidth}"
+                        shortDesc="#{bindings.ArtikliView1.hints.DatumIzmjene.tooltip}" id="id2">
+            <f:validator binding="#{row.bindings.DatumIzmjene.validator}"/>
+            <af:convertDateTime pattern="#{bindings.ArtikliView1.hints.DatumIzmjene.format}"/>
+          </af:inputDate>
+        </af:column>
+      </af:table>
+    </f:facet>
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top">
+      <af:outputText value="Prikaz artikala" id="ot1"
+                     inlineStyle="color:Navy; font-size:x-large; font-family:Georgia, 'Times New Roman', times, Serif;"/>
+    </f:facet>
+  </af:panelStretchLayout>
+</ui:composition>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="Zaglavlje_prim_formPageDef"
+                Package="hr.oikt.project_no1.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PrimkeZaglavljeView1" RangeSize="25" DataControl="zaliheAMDataControl"
+              id="PrimkeZaglavljeView1Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="PrimkeZaglavljeView1Iterator" StaticList="false" Uses="LOV_IdDobavljaca" id="IdDobavljaca"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="PrimkeZaglavljeView1Iterator" StaticList="false" Uses="LOV_IdSkladista" id="IdSkladista"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="PrimkeZaglavljeView1Iterator" id="Broj">
+      <AttrNames>
+        <Item Value="Broj"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimkeZaglavljeView1Iterator" id="Datum">
+      <AttrNames>
+        <Item Value="Datum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimkeZaglavljeView1Iterator" id="Opis">
+      <AttrNames>
+        <Item Value="Opis"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimkeZaglavljeView1Iterator" id="OznakaPotvrde">
+      <AttrNames>
+        <Item Value="OznakaPotvrde"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimkeZaglavljeView1Iterator" id="UserDodavanja">
+      <AttrNames>
+        <Item Value="UserDodavanja"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimkeZaglavljeView1Iterator" id="DatumDodavanja">
+      <AttrNames>
+        <Item Value="DatumDodavanja"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimkeZaglavljeView1Iterator" id="UserIzmjene">
+      <AttrNames>
+        <Item Value="UserIzmjene"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimkeZaglavljeView1Iterator" id="DatumIzmjene">
+      <AttrNames>
+        <Item Value="DatumIzmjene"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

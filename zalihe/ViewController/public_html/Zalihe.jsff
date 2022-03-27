@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+  <af:panelStretchLayout id="psl2" topHeight="152px" startWidth="459px" endWidth="144px">
+    <f:facet name="bottom"/>
+    <f:facet name="center">
+      <af:table value="#{bindings.ZaliheViewObject1.collectionModel}" var="row"
+                rows="#{bindings.ZaliheViewObject1.rangeSize}"
+                emptyText="#{bindings.ZaliheViewObject1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                fetchSize="#{bindings.ZaliheViewObject1.rangeSize}" rowBandingInterval="0"
+                selectedRowKeys="#{bindings.ZaliheViewObject1.collectionModel.selectedRow}"
+                selectionListener="#{bindings.ZaliheViewObject1.collectionModel.makeCurrent}"
+                id="t1" partialTriggers="::cb1" inlineStyle="width:20cm;" width="1000px">
+        <af:column sortProperty="#{bindings.IdArtikla.hints.IdArtikla}" sortable="true"
+                   headerText="#{bindings.IdArtikla.hints.IdArtikla.label}" id="c1" width="178">
+          <af:outputText value="#{bindings.ZalihaView1Iterator.rowSetIterator}"
+                         shortDesc="#{bindings.ZaliheViewObject1.hints.Naziv_artikla.tooltip}" id="ot2"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.IdSkladista.hints.IdSkladista}" sortable="true"
+                   headerText="#{bindings.IdSkladista.hints.IdSkladista.label}" id="c2" width="89">
+          <af:outputText value="#{bindings.ZalihaView1Iterator.rowSetIterator}"
+                         shortDesc="#{bindings.ZaliheViewObject1.hints.Sifra_artikla.tooltip}" id="ot3"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.Kolicina.hints.Kolicina}" sortable="true"
+                   headerText="#{bindings.Kolicina.hints.Kolicina.label}" id="c3" width="64">
+          <af:outputText value="#{bindings.ZalihaView1Iterator.rowSetIterator}" shortDesc="#{bindings.ZaliheViewObject1.hints.Kolicina.tooltip}"
+                         id="ot4"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.ProsjecnaCijena.hints.ProsjecnaCijena}" sortable="true"
+                   headerText="#{bindings.ProsjecnaCijena.hints.label}" id="c6" width="100">
+          <af:outputText value="#{bindings.ZalihaView1Iterator.rowSetIterator}"
+                         shortDesc="#{bindings.ZaliheViewObject1.hints.ProsjecnaCijena.tooltip}" id="ot7"/>
+        </af:column>
+      </af:table>
+    </f:facet>
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top">
+      <af:panelGroupLayout layout="scroll" id="pgl1" inlineStyle="text-align:center;">
+        <af:outputText value="Pregled zaliha na skladištu" id="ot1"
+                       inlineStyle="color:Navy; font-size:x-large; font-family:Georgia, 'Times New Roman', times, Serif; padding:0px; margin:0px;"/>
+        <af:panelFormLayout id="pfl1" inlineStyle="text-align:center; padding:25px 0px 0px;">
+          <af:panelGroupLayout id="pgl2"/>
+        </af:panelFormLayout>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelStretchLayout>
+</ui:composition>

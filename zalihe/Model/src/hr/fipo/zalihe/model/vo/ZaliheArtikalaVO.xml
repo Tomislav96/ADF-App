@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ZaliheArtikalaVO"
+  Version="12.2.1.9.14"
+  SelectList="Zaliha.ID, 
+       Zaliha.ID_SKLADISTA, 
+       Zaliha.ID_ARTIKLA, 
+       Zaliha.KOLICINA, 
+       Zaliha.PROSJECNA_CIJENA, 
+       Zaliha.USER_DODAVANJA, 
+       Zaliha.DATUM_DODAVANJA, 
+       Zaliha.USER_IZMJENE, 
+       Zaliha.DATUM_IZMJENE, 
+       Artikli.NAZIV, 
+       Artikli.ID AS ID1, 
+       Artikli.SIFRA"
+  FromList="ZALIHA Zaliha, ARTIKLI Artikli, SKLADISTA Skladista"
+  Where="(Zaliha.ID_ARTIKLA = Artikli.ID) AND (Zaliha.ID_SKLADISTA = Skladista.ID)"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="hr.fipo.zalihe.model.vo.ZaliheArtikalaVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="vSkladiste"
+    Kind="viewcriteria"
+    Type="java.lang.Long"/>
+  <ViewAccessor
+    Name="SkladistaVO1"
+    ViewObjectName="hr.fipo.zalihe.model.vo.SkladistaVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_IdSkladista"
+    ListVOName="SkladistaVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IdSkladista"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Naziv"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Zaliha"
+    Entity="hr.fipo.zalihe.model.eo.ZalihaEO"/>
+  <EntityUsage
+    Name="Artikli"
+    Entity="hr.fipo.zalihe.model.eo.ArtikliEO"
+    Association="hr.fipo.zalihe.model.eo.assoc.ZalArtFkAssoc"
+    AssociationEnd="hr.fipo.zalihe.model.eo.assoc.ZalArtFkAssoc.Artikli"
+    SourceUsage="hr.fipo.zalihe.model.vo.ZaliheArtikalaVO.Zaliha"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="hr.fipo.zalihe.model.eo.ZalihaEO.IdArtikla"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="hr.fipo.zalihe.model.eo.ArtikliEO.Id"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="Skladista"
+    Entity="hr.fipo.zalihe.model.eo.SkladistaEO"
+    Association="hr.fipo.zalihe.model.eo.assoc.ZalSklFkAssoc"
+    AssociationEnd="hr.fipo.zalihe.model.eo.assoc.ZalSklFkAssoc.Skladista"
+    SourceUsage="hr.fipo.zalihe.model.vo.ZaliheArtikalaVO.Zaliha"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="hr.fipo.zalihe.model.eo.SkladistaEO.Id"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="hr.fipo.zalihe.model.eo.ZalihaEO.IdSkladista"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="Zaliha"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="IdSkladista"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IdSkladista"
+    EntityUsage="Zaliha"
+    AliasName="ID_SKLADISTA"
+    LOVName="LOV_IdSkladista">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IdArtikla"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IdArtikla"
+    EntityUsage="Zaliha"
+    AliasName="ID_ARTIKLA"/>
+  <ViewAttribute
+    Name="Kolicina"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Kolicina"
+    EntityUsage="Zaliha"
+    AliasName="KOLICINA"/>
+  <ViewAttribute
+    Name="ProsjecnaCijena"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProsjecnaCijena"
+    EntityUsage="Zaliha"
+    AliasName="PROSJECNA_CIJENA"/>
+  <ViewAttribute
+    Name="UserDodavanja"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserDodavanja"
+    EntityUsage="Zaliha"
+    AliasName="USER_DODAVANJA"/>
+  <ViewAttribute
+    Name="DatumDodavanja"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DatumDodavanja"
+    EntityUsage="Zaliha"
+    AliasName="DATUM_DODAVANJA"/>
+  <ViewAttribute
+    Name="UserIzmjene"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserIzmjene"
+    EntityUsage="Zaliha"
+    AliasName="USER_IZMJENE"/>
+  <ViewAttribute
+    Name="DatumIzmjene"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DatumIzmjene"
+    EntityUsage="Zaliha"
+    AliasName="DATUM_IZMJENE"/>
+  <ViewAttribute
+    Name="Naziv"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Naziv"
+    EntityUsage="Artikli"
+    AliasName="NAZIV"/>
+  <ViewAttribute
+    Name="Id1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="Artikli"
+    AliasName="ID1"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="Sifra"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Sifra"
+    EntityUsage="Artikli"
+    AliasName="SIFRA"/>
+  <ViewCriteria
+    Name="ZaliheZaSkladisteVC"
+    ViewObjectName="hr.fipo.zalihe.model.vo.ZaliheArtikalaVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="ZaliheArtikalaVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="IdSkladista"
+        ViewAttribute="IdSkladista"
+        Operator="="
+        Conjunction="AND"
+        Value=":vSkladiste"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="hr.fipo.zalihe.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

@@ -1,0 +1,13 @@
+//Groovy Scripts for hr.fipo.zalihe.model.eo.IzdatniceZaglavljeEO
+
+package hr.fipo.zalihe.model.eo
+
+import oracle.jbo.script.annotation.MessageParameterExpression;
+import oracle.jbo.script.annotation.ValidatorExpression;
+
+@ValidatorExpression(name="DatumRule0", attributeName="Datum")
+def Datum_DatumRule0_ValidationRuleScript_ValidationRule()
+{
+adf.currentDate
+}
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14"
+                id="artikli_btf_artikli_btf_ArtikliPageDef" Package="hr.oikt.project_no1.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ArtikliView1" RangeSize="10" DataControl="zaliheAMDataControl" id="ArtikliView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ArtikliView1Iterator" id="ArtikliView1">
+      <nodeDefinition DefName="hr.fipo.zalihe.model.vo.ArtikliVO" Name="ArtikliView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="DatumIzmjene"/>
+          <Item Value="Naziv"/>
+          <Item Value="Sifra"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="UserIzmjene"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

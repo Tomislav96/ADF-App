@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ArtikliEO"
+  Version="12.2.1.9.14"
+  DBObjectType="table"
+  DBObjectName="ARTIKLI"
+  AliasName="Artikli"
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  <Attribute
+    Name="Id"
+    Precision="10"
+    Scale="0"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="ARTIKLI"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    RetrievedOnInsert="true"/>
+  <Attribute
+    Name="Sifra"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="10"
+    ColumnName="SIFRA"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ARTIKLI">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Naziv"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="NAZIV"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ARTIKLI">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UserDodavanja"
+    Precision="30"
+    ColumnName="USER_DODAVANJA"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ARTIKLI"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"
+    IsUpdateable="false">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DatumDodavanja"
+    ColumnName="DATUM_DODAVANJA"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="DATE"
+    TableName="ARTIKLI"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
+  <Attribute
+    Name="UserIzmjene"
+    Precision="30"
+    ColumnName="USER_IZMJENE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ARTIKLI"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"
+    IsUpdateable="false">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DatumIzmjene"
+    ColumnName="DATUM_IZMJENE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="DATE"
+    TableName="ARTIKLI"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IzdatniceStavke"
+    Association="hr.fipo.zalihe.model.eo.assoc.IzdStaArtFkAssoc"
+    AssociationEnd="hr.fipo.zalihe.model.eo.assoc.IzdStaArtFkAssoc.IzdatniceStavke"
+    AssociationOtherEnd="hr.fipo.zalihe.model.eo.assoc.IzdStaArtFkAssoc.Artikli"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="PrimkeStavke"
+    Association="hr.fipo.zalihe.model.eo.assoc.PriStaArtFkAssoc"
+    AssociationEnd="hr.fipo.zalihe.model.eo.assoc.PriStaArtFkAssoc.PrimkeStavke"
+    AssociationOtherEnd="hr.fipo.zalihe.model.eo.assoc.PriStaArtFkAssoc.Artikli"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Zaliha"
+    Association="hr.fipo.zalihe.model.eo.assoc.ZalArtFkAssoc"
+    AssociationEnd="hr.fipo.zalihe.model.eo.assoc.ZalArtFkAssoc.Zaliha"
+    AssociationOtherEnd="hr.fipo.zalihe.model.eo.assoc.ZalArtFkAssoc.Artikli"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="ArtNazivUk">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ART_NAZIV_UK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fipo.zalihe.model.eo.ArtikliEO.Naziv"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ArtPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ART_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fipo.zalihe.model.eo.ArtikliEO.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ArtSifraUk">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ART_SIFRA_UK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fipo.zalihe.model.eo.ArtikliEO.Sifra"/>
+    </AttrArray>
+  </Key>
+  <validation:UniqueKeyValidationBean
+    Name="ArtikliEORule0"
+    ResId="hr.fipo.zalihe.model.eo.ArtikliEO_Rule_0"
+    KeyName="ArtPk">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="Id"/>
+    </validation:OnAttributes>
+  </validation:UniqueKeyValidationBean>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="hr.fipo.zalihe.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

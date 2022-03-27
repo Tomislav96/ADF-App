@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="Izd_Stavka_formPageDef"
+                Package="hr.oikt.project_no1.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="IzdatniceStavkeView1" RangeSize="25" DataControl="zaliheAMDataControl"
+              id="IzdatniceStavkeView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="IzdatniceStavkeView1Iterator" id="IdIzdatnice">
+      <AttrNames>
+        <Item Value="IdIzdatnice"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="IzdatniceStavkeView1Iterator" StaticList="false" Uses="LOV_IdArtikla" id="IdArtikla"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="IzdatniceStavkeView1Iterator" id="Kolicina">
+      <AttrNames>
+        <Item Value="Kolicina"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IzdatniceStavkeView1Iterator" id="ProsjecnaCijena">
+      <AttrNames>
+        <Item Value="ProsjecnaCijena"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IzdatniceStavkeView1Iterator" id="UserDodavanja">
+      <AttrNames>
+        <Item Value="UserDodavanja"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IzdatniceStavkeView1Iterator" id="DatumDodavanja">
+      <AttrNames>
+        <Item Value="DatumDodavanja"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IzdatniceStavkeView1Iterator" id="UserIzmjene">
+      <AttrNames>
+        <Item Value="UserIzmjene"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IzdatniceStavkeView1Iterator" id="DatumIzmjene">
+      <AttrNames>
+        <Item Value="DatumIzmjene"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IzdatniceStavkeView1Iterator" id="Naziv">
+      <AttrNames>
+        <Item Value="Naziv"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IzdatniceStavkeView1Iterator" id="Id2">
+      <AttrNames>
+        <Item Value="Id2"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

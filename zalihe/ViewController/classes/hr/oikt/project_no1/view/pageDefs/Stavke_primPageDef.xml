@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="Stavke_primPageDef"
+                Package="hr.oikt.project_no1.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PrimkaStaView2" RangeSize="25" DataControl="no1_AMDataControl" id="PrimkaStaView2Iterator"/>
+    <searchRegion Binds="PrimkaStaView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PrimkaStaView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PrimkaStaView2Iterator" id="PrimkaStaView2">
+      <nodeDefinition DefName="hr.oikt.project_no1.model.vo.PrimkaStaView" Name="PrimkaStaView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="IdPrimke"/>
+          <Item Value="IdArtikla"/>
+          <Item Value="Kolicina"/>
+          <Item Value="NabavnaCijena"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="UserIzmjene"/>
+          <Item Value="DatumIzmjene"/>
+          <Item Value="Artikli_Naziv"/>
+          <Item Value="Artikli_Id"/>
+          <Item Value="Artikli_Sifra"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PrimkaStaView2Iterator" id="PrimkaStaView21">
+      <nodeDefinition DefName="hr.oikt.project_no1.model.vo.PrimkaStaView" Name="PrimkaStaView210">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="IdPrimke"/>
+          <Item Value="IdArtikla"/>
+          <Item Value="Kolicina"/>
+          <Item Value="NabavnaCijena"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="UserIzmjene"/>
+          <Item Value="DatumIzmjene"/>
+          <Item Value="Artikli_Naziv"/>
+          <Item Value="Artikli_Id"/>
+          <Item Value="Artikli_Sifra"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

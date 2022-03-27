@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="hr.fipo.zalihe.model.am.zaliheAM">
+      <AppModuleConfig name="zaliheAMLocal" jbo.project="hr.fipo.zalihe.model.Model" ApplicationName="hr.fipo.zalihe.model.am.zaliheAM" DeployPlatform="LOCAL">
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="hr.fipo.zalihe.model.am.zaliheAM"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/sklConnDS"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="zaliheAMShared" jbo.project="hr.fipo.zalihe.model.Model" ApplicationName="hr.fipo.zalihe.model.am.zaliheAM" DeployPlatform="LOCAL">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="hr.fipo.zalihe.model.am.zaliheAM"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/sklConnDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

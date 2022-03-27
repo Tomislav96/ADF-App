@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="bottom">
+      <af:panelGroupLayout id="pgl1">
+        <af:commandButton text="Natrag" id="cb1" action="go_izlaz" icon="/resources/images/Natrag.png"
+                          immediate="true"/>
+        <af:commandButton text="Obriši zaglavlje" id="cb4" action="go_delete" icon="/resources/images/Obrisi.png"/>
+        <af:commandButton text="Izmjeni zaglavlje" id="cb2" action="go_zag_form" icon="/resources/images/Izmjeni.png"/>
+        <af:commandButton text="Dodaj novo zaglavlje " id="cb3" action="go_create_zag"
+                          icon="/resources/images/Dodaj.png"/>
+        <af:commandButton text="Stavke" id="cb5" action="go_stavke" icon="/resources/images/Stavke.png"/>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="center">
+      <af:table value="#{bindings.PrimkeZaglavljeView1.collectionModel}" var="row"
+                rows="#{bindings.PrimkeZaglavljeView1.rangeSize}"
+                emptyText="#{bindings.PrimkeZaglavljeView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                fetchSize="#{bindings.PrimkeZaglavljeView1.rangeSize}" rowBandingInterval="0"
+                filterModel="#{bindings.PrimkeZaglavljeView1Query.queryDescriptor}"
+                queryListener="#{bindings.PrimkeZaglavljeView1Query.processQuery}" filterVisible="true" varStatus="vs"
+                selectedRowKeys="#{bindings.PrimkeZaglavljeView1.collectionModel.selectedRow}"
+                selectionListener="#{bindings.PrimkeZaglavljeView1.collectionModel.makeCurrent}" rowSelection="single"
+                id="t1">
+        <af:column sortProperty="#{bindings.PrimkeZaglavljeView1.hints.Id}" filterable="true" sortable="true"
+                   headerText="#{bindings.PrimkeZaglavljeView1.hints.Id.label}" id="c1">
+          <af:inputText value="#{row.bindings.Id.inputValue}" label="#{bindings.PrimkeZaglavljeView1.hints.Id.label}"
+                        required="#{bindings.PrimkeZaglavljeView1.hints.Id.mandatory}"
+                        columns="#{bindings.PrimkeZaglavljeView1.hints.Id.displayWidth}"
+                        maximumLength="#{bindings.PrimkeZaglavljeView1.hints.Id.precision}"
+                        shortDesc="#{bindings.PrimkeZaglavljeView1.hints.Id.tooltip}" id="it2">
+            <f:validator binding="#{row.bindings.Id.validator}"/>
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.PrimkeZaglavljeView1.hints.Id.format}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PrimkeZaglavljeView1.hints.IdDobavljaca}" filterable="true"
+                   sortable="true" headerText="#{bindings.PrimkeZaglavljeView1.hints.IdDobavljaca.label}" id="c7">
+          <af:selectOneChoice value="#{row.bindings.IdDobavljaca.inputValue}" label="#{row.bindings.IdDobavljaca.label}"
+                              required="#{bindings.PrimkeZaglavljeView1.hints.IdDobavljaca.mandatory}"
+                              shortDesc="#{bindings.PrimkeZaglavljeView1.hints.IdDobavljaca.tooltip}" id="soc1">
+            <f:selectItems value="#{row.bindings.IdDobavljaca.items}" id="si1"/>
+            <f:validator binding="#{row.bindings.IdDobavljaca.validator}"/>
+          </af:selectOneChoice>
+        </af:column>
+        <af:column sortProperty="#{bindings.PrimkeZaglavljeView1.hints.IdSkladista}" filterable="true"
+                   sortable="true" headerText="#{bindings.PrimkeZaglavljeView1.hints.IdSkladista.label}" id="c10">
+          <af:selectOneChoice value="#{row.bindings.IdSkladista.inputValue}" label="#{row.bindings.IdSkladista.label}"
+                              required="#{bindings.PrimkeZaglavljeView1.hints.IdSkladista.mandatory}"
+                              shortDesc="#{bindings.PrimkeZaglavljeView1.hints.IdSkladista.tooltip}" id="soc2">
+            <f:selectItems value="#{row.bindings.IdSkladista.items}" id="si2"/>
+            <f:validator binding="#{row.bindings.IdSkladista.validator}"/>
+          </af:selectOneChoice>
+        </af:column>
+        <af:column sortProperty="#{bindings.PrimkeZaglavljeView1.hints.Broj}" filterable="true" sortable="true"
+                   headerText="#{bindings.PrimkeZaglavljeView1.hints.Broj.label}" id="c8">
+          <af:inputText value="#{row.bindings.Broj.inputValue}"
+                        label="#{bindings.PrimkeZaglavljeView1.hints.Broj.label}"
+                        required="#{bindings.PrimkeZaglavljeView1.hints.Broj.mandatory}"
+                        columns="#{bindings.PrimkeZaglavljeView1.hints.Broj.displayWidth}"
+                        maximumLength="#{bindings.PrimkeZaglavljeView1.hints.Broj.precision}"
+                        shortDesc="#{bindings.PrimkeZaglavljeView1.hints.Broj.tooltip}" id="it8">
+            <f:validator binding="#{row.bindings.Broj.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PrimkeZaglavljeView1.hints.Datum}" filterable="true" sortable="true"
+                   headerText="#{bindings.PrimkeZaglavljeView1.hints.Datum.label}" id="c13">
+          <f:facet name="filter">
+            <af:inputDate value="#{bindings.PrimkeZaglavljeView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Datum.value}"
+                          id="id6">
+              <af:convertDateTime pattern="#{bindings.PrimkeZaglavljeView1.hints.Datum.format}"/>
+            </af:inputDate>
+          </f:facet>
+          <af:inputDate value="#{row.bindings.Datum.inputValue}"
+                        label="#{bindings.PrimkeZaglavljeView1.hints.Datum.label}"
+                        required="#{bindings.PrimkeZaglavljeView1.hints.Datum.mandatory}"
+                        columns="#{bindings.PrimkeZaglavljeView1.hints.Datum.displayWidth}"
+                        shortDesc="#{bindings.PrimkeZaglavljeView1.hints.Datum.tooltip}" id="id3">
+            <f:validator binding="#{row.bindings.Datum.validator}"/>
+            <af:convertDateTime pattern="#{bindings.PrimkeZaglavljeView1.hints.Datum.format}"/>
+          </af:inputDate>
+        </af:column>
+        <af:column sortProperty="#{bindings.PrimkeZaglavljeView1.hints.Opis}" filterable="true" sortable="true"
+                   headerText="#{bindings.PrimkeZaglavljeView1.hints.Opis.label}" id="c12">
+          <af:inputText value="#{row.bindings.Opis.inputValue}"
+                        label="#{bindings.PrimkeZaglavljeView1.hints.Opis.label}"
+                        required="#{bindings.PrimkeZaglavljeView1.hints.Opis.mandatory}"
+                        columns="#{bindings.PrimkeZaglavljeView1.hints.Opis.displayWidth}"
+                        maximumLength="#{bindings.PrimkeZaglavljeView1.hints.Opis.precision}"
+                        shortDesc="#{bindings.PrimkeZaglavljeView1.hints.Opis.tooltip}" id="it5">
+            <f:validator binding="#{row.bindings.Opis.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PrimkeZaglavljeView1.hints.OznakaPotvrde}" filterable="true"
+                   sortable="true" headerText="#{bindings.PrimkeZaglavljeView1.hints.OznakaPotvrde.label}" id="c11">
+          <af:inputText value="#{row.bindings.OznakaPotvrde.inputValue}"
+                        label="#{bindings.PrimkeZaglavljeView1.hints.OznakaPotvrde.label}"
+                        required="#{bindings.PrimkeZaglavljeView1.hints.OznakaPotvrde.mandatory}"
+                        columns="#{bindings.PrimkeZaglavljeView1.hints.OznakaPotvrde.displayWidth}"
+                        maximumLength="#{bindings.PrimkeZaglavljeView1.hints.OznakaPotvrde.precision}"
+                        shortDesc="#{bindings.PrimkeZaglavljeView1.hints.OznakaPotvrde.tooltip}" id="it4">
+            <f:validator binding="#{row.bindings.OznakaPotvrde.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PrimkeZaglavljeView1.hints.UserDodavanja}" filterable="true"
+                   sortable="true" headerText="#{bindings.PrimkeZaglavljeView1.hints.UserDodavanja.label}" id="c5">
+          <af:inputText value="#{row.bindings.UserDodavanja.inputValue}"
+                        label="#{bindings.PrimkeZaglavljeView1.hints.UserDodavanja.label}"
+                        required="#{bindings.PrimkeZaglavljeView1.hints.UserDodavanja.mandatory}"
+                        columns="#{bindings.PrimkeZaglavljeView1.hints.UserDodavanja.displayWidth}"
+                        maximumLength="#{bindings.PrimkeZaglavljeView1.hints.UserDodavanja.precision}"
+                        shortDesc="#{bindings.PrimkeZaglavljeView1.hints.UserDodavanja.tooltip}" id="it6">
+            <f:validator binding="#{row.bindings.UserDodavanja.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PrimkeZaglavljeView1.hints.DatumDodavanja}" filterable="true"
+                   sortable="true" headerText="#{bindings.PrimkeZaglavljeView1.hints.DatumDodavanja.label}" id="c6">
+          <f:facet name="filter">
+            <af:inputDate value="#{bindings.PrimkeZaglavljeView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DatumDodavanja.value}"
+                          id="id4">
+              <af:convertDateTime pattern="#{bindings.PrimkeZaglavljeView1.hints.DatumDodavanja.format}"/>
+            </af:inputDate>
+          </f:facet>
+          <af:inputDate value="#{row.bindings.DatumDodavanja.inputValue}"
+                        label="#{bindings.PrimkeZaglavljeView1.hints.DatumDodavanja.label}"
+                        required="#{bindings.PrimkeZaglavljeView1.hints.DatumDodavanja.mandatory}"
+                        columns="#{bindings.PrimkeZaglavljeView1.hints.DatumDodavanja.displayWidth}"
+                        shortDesc="#{bindings.PrimkeZaglavljeView1.hints.DatumDodavanja.tooltip}" id="id5">
+            <f:validator binding="#{row.bindings.DatumDodavanja.validator}"/>
+            <af:convertDateTime pattern="#{bindings.PrimkeZaglavljeView1.hints.DatumDodavanja.format}"/>
+          </af:inputDate>
+        </af:column>
+        <af:column sortProperty="#{bindings.PrimkeZaglavljeView1.hints.UserIzmjene}" filterable="true"
+                   sortable="true" headerText="#{bindings.PrimkeZaglavljeView1.hints.UserIzmjene.label}" id="c2">
+          <af:inputText value="#{row.bindings.UserIzmjene.inputValue}"
+                        label="#{bindings.PrimkeZaglavljeView1.hints.UserIzmjene.label}"
+                        required="#{bindings.PrimkeZaglavljeView1.hints.UserIzmjene.mandatory}"
+                        columns="#{bindings.PrimkeZaglavljeView1.hints.UserIzmjene.displayWidth}"
+                        maximumLength="#{bindings.PrimkeZaglavljeView1.hints.UserIzmjene.precision}"
+                        shortDesc="#{bindings.PrimkeZaglavljeView1.hints.UserIzmjene.tooltip}" id="it3">
+            <f:validator binding="#{row.bindings.UserIzmjene.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PrimkeZaglavljeView1.hints.DatumIzmjene}" filterable="true"
+                   sortable="true" headerText="#{bindings.PrimkeZaglavljeView1.hints.DatumIzmjene.label}" id="c9">
+          <f:facet name="filter">
+            <af:inputDate value="#{bindings.PrimkeZaglavljeView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DatumIzmjene.value}"
+                          id="id1">
+              <af:convertDateTime pattern="#{bindings.PrimkeZaglavljeView1.hints.DatumIzmjene.format}"/>
+            </af:inputDate>
+          </f:facet>
+          <af:inputDate value="#{row.bindings.DatumIzmjene.inputValue}"
+                        label="#{bindings.PrimkeZaglavljeView1.hints.DatumIzmjene.label}"
+                        required="#{bindings.PrimkeZaglavljeView1.hints.DatumIzmjene.mandatory}"
+                        columns="#{bindings.PrimkeZaglavljeView1.hints.DatumIzmjene.displayWidth}"
+                        shortDesc="#{bindings.PrimkeZaglavljeView1.hints.DatumIzmjene.tooltip}" id="id2">
+            <f:validator binding="#{row.bindings.DatumIzmjene.validator}"/>
+            <af:convertDateTime pattern="#{bindings.PrimkeZaglavljeView1.hints.DatumIzmjene.format}"/>
+          </af:inputDate>
+        </af:column>
+      </af:table>
+    </f:facet>
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top">
+      <af:outputText value="Primke zaglavlje" id="ot16"
+                     inlineStyle="color:Navy; font-size:x-large; font-family:Georgia, 'Times New Roman', times, Serif;"/>
+    </f:facet>
+  </af:panelStretchLayout>
+</ui:composition>

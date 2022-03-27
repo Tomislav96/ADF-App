@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="bottom">
+      <af:panelGroupLayout id="pgl1">
+        <af:commandButton text="Natrag" id="cb1" action="go_stavke" icon="/resources/images/Natrag.png"
+                          immediate="true"/>
+        <af:commandButton text="Spremi" id="cb2" action="go_commit" icon="/resources/images/Spremi.png"/>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="center">
+      <af:panelFormLayout id="pfl1">
+        <af:selectOneChoice value="#{bindings.IdPrimke.inputValue}" label="Primke"
+                            required="#{bindings.IdPrimke.hints.mandatory}"
+                            shortDesc="#{bindings.IdPrimke.hints.tooltip}" id="soc1">
+          <f:selectItems value="#{bindings.IdPrimke.items}" id="si1"/>
+        </af:selectOneChoice>
+        <af:selectOneChoice value="#{bindings.IdArtikla.inputValue}" label="Artikli"
+                            required="#{bindings.IdArtikla.hints.mandatory}"
+                            shortDesc="#{bindings.IdArtikla.hints.tooltip}" id="soc2">
+          <f:selectItems value="#{bindings.IdArtikla.items}" id="si2"/>
+        </af:selectOneChoice>
+        <af:inputText value="#{bindings.Kolicina.inputValue}" label="#{bindings.Kolicina.hints.label}"
+                      required="#{bindings.Kolicina.hints.mandatory}" columns="#{bindings.Kolicina.hints.displayWidth}"
+                      maximumLength="#{bindings.Kolicina.hints.precision}"
+                      shortDesc="#{bindings.Kolicina.hints.tooltip}" id="it1">
+          <f:validator binding="#{bindings.Kolicina.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.NabavnaCijena.inputValue}" label="#{bindings.NabavnaCijena.hints.label}"
+                      required="#{bindings.NabavnaCijena.hints.mandatory}"
+                      columns="#{bindings.NabavnaCijena.hints.displayWidth}"
+                      maximumLength="#{bindings.NabavnaCijena.hints.precision}"
+                      shortDesc="#{bindings.NabavnaCijena.hints.tooltip}" id="it2">
+          <f:validator binding="#{bindings.NabavnaCijena.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.UserDodavanja.inputValue}" label="#{bindings.UserDodavanja.hints.label}"
+                      required="#{bindings.UserDodavanja.hints.mandatory}"
+                      columns="#{bindings.UserDodavanja.hints.displayWidth}"
+                      maximumLength="#{bindings.UserDodavanja.hints.precision}"
+                      shortDesc="#{bindings.UserDodavanja.hints.tooltip}" id="it3">
+          <f:validator binding="#{bindings.UserDodavanja.validator}"/>
+        </af:inputText>
+        <af:inputDate value="#{bindings.DatumDodavanja.inputValue}" label="#{bindings.DatumDodavanja.hints.label}"
+                      required="#{bindings.DatumDodavanja.hints.mandatory}"
+                      columns="#{bindings.DatumDodavanja.hints.displayWidth}"
+                      shortDesc="#{bindings.DatumDodavanja.hints.tooltip}" id="id1">
+          <f:validator binding="#{bindings.DatumDodavanja.validator}"/>
+          <af:convertDateTime pattern="#{bindings.DatumDodavanja.format}"/>
+        </af:inputDate>
+        <af:inputText value="#{bindings.UserIzmjene.inputValue}" label="#{bindings.UserIzmjene.hints.label}"
+                      required="#{bindings.UserIzmjene.hints.mandatory}"
+                      columns="#{bindings.UserIzmjene.hints.displayWidth}"
+                      maximumLength="#{bindings.UserIzmjene.hints.precision}"
+                      shortDesc="#{bindings.UserIzmjene.hints.tooltip}" id="it4">
+          <f:validator binding="#{bindings.UserIzmjene.validator}"/>
+        </af:inputText>
+        <af:inputDate value="#{bindings.DatumIzmjene.inputValue}" label="#{bindings.DatumIzmjene.hints.label}"
+                      required="#{bindings.DatumIzmjene.hints.mandatory}"
+                      columns="#{bindings.DatumIzmjene.hints.displayWidth}"
+                      shortDesc="#{bindings.DatumIzmjene.hints.tooltip}" id="id2">
+          <f:validator binding="#{bindings.DatumIzmjene.validator}"/>
+          <af:convertDateTime pattern="#{bindings.DatumIzmjene.format}"/>
+        </af:inputDate>
+      </af:panelFormLayout>
+    </f:facet>
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top">
+      <af:outputText value="Stavka" id="ot1"
+                     inlineStyle="color:Navy; font-size:x-large; font-family:Georgia, 'Times New Roman', times, Serif;"/>
+    </f:facet>
+  </af:panelStretchLayout>
+</ui:composition>

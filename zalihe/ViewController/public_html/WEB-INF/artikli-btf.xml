@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="artikli-btf">
+    <default-activity>Artikli1</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <task-flow-call id="pocetna-btf">
+      <task-flow-reference>
+        <document>/WEB-INF/pocetna-btf.xml</document>
+        <id>pocetna-btf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <view id="Artikli1">
+      <page>/Artikli.jsff</page>
+    </view>
+    <view id="Artikli_izmjena1">
+      <page>/Artikli_izmjena.jsff</page>
+    </view>
+    <method-call id="Delete">
+      <method>#{bindings.Delete.execute}</method>
+      <outcome>
+        <fixed-outcome>Delete</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="Commit">
+      <method>#{bindings.Commit.execute}</method>
+      <outcome>
+        <fixed-outcome>Commit</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="Rollback">
+      <method>#{bindings.Rollback.execute}</method>
+      <outcome>
+        <fixed-outcome>Rollback</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="CreateInsert">
+      <method>#{bindings.CreateInsert.execute}</method>
+      <outcome>
+        <fixed-outcome>CreateInsert</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__10">
+      <from-activity-id>Artikli1</from-activity-id>
+      <control-flow-case id="__11">
+        <from-outcome>go_delete</from-outcome>
+        <to-activity-id>Delete</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__15">
+        <from-outcome>go_insert</from-outcome>
+        <to-activity-id>CreateInsert</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__16">
+        <from-outcome>go_izlaz</from-outcome>
+        <to-activity-id>pocetna-btf</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__17">
+        <from-outcome>go_izmjena</from-outcome>
+        <to-activity-id>Artikli_izmjena1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__22">
+      <from-activity-id>CreateInsert</from-activity-id>
+      <control-flow-case id="__23">
+        <from-outcome>CreateInsert</from-outcome>
+        <to-activity-id>Artikli_izmjena1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>Artikli_izmjena1</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome>go_artikli</from-outcome>
+        <to-activity-id>Rollback</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__7">
+      <from-activity-id>Commit</from-activity-id>
+      <control-flow-case id="__8">
+        <from-outcome>Commit</from-outcome>
+        <to-activity-id>Artikli1</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__14">
+        <from-outcome>Commit</from-outcome>
+        <to-activity-id>Artikli_izmjena1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__12">
+      <from-activity-id>Rollback</from-activity-id>
+      <control-flow-case id="__13">
+        <from-outcome>Rollback</from-outcome>
+        <to-activity-id>Artikli1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

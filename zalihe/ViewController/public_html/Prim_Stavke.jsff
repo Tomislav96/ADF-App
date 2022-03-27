@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="bottom">
+      <af:panelGroupLayout id="pgl1">
+        <af:commandButton text="Natrag" id="cb1" action="go_izlaz" icon="/resources/images/Natrag.png"
+                          immediate="true"/>
+        <af:commandButton text="Obriši stavku" id="cb4" action="go_delete" icon="/resources/images/Obrisi.png"/>
+        <af:commandButton text="Izmjeni" id="cb2" action="go_stavke_izmjena" icon="/resources/images/Izmjeni.png"/>
+        <af:commandButton text="Dodaj novu stavku" id="cb3" action="go_insert" icon="/resources/images/Dodaj.png"/>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="center">
+      <af:table value="#{bindings.PrimkeStavkeView1.collectionModel}" var="row"
+                rows="#{bindings.PrimkeStavkeView1.rangeSize}"
+                emptyText="#{bindings.PrimkeStavkeView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                fetchSize="#{bindings.PrimkeStavkeView1.rangeSize}" rowBandingInterval="0"
+                filterModel="#{bindings.PrimkeStavkeView1Query.queryDescriptor}"
+                queryListener="#{bindings.PrimkeStavkeView1Query.processQuery}" filterVisible="true" varStatus="vs"
+                selectedRowKeys="#{bindings.PrimkeStavkeView1.collectionModel.selectedRow}"
+                selectionListener="#{bindings.PrimkeStavkeView1.collectionModel.makeCurrent}" rowSelection="single"
+                id="t1">
+        <af:column sortProperty="#{bindings.PrimkeStavkeView1.hints.Id}" filterable="true" sortable="true"
+                   headerText="#{bindings.PrimkeStavkeView1.hints.Id.label}" id="c8">
+          <af:inputText value="#{row.bindings.Id.inputValue}" label="#{bindings.PrimkeStavkeView1.hints.Id.label}"
+                        required="#{bindings.PrimkeStavkeView1.hints.Id.mandatory}"
+                        columns="#{bindings.PrimkeStavkeView1.hints.Id.displayWidth}"
+                        maximumLength="#{bindings.PrimkeStavkeView1.hints.Id.precision}"
+                        shortDesc="#{bindings.PrimkeStavkeView1.hints.Id.tooltip}" id="it6">
+            <f:validator binding="#{row.bindings.Id.validator}"/>
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.PrimkeStavkeView1.hints.Id.format}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PrimkeStavkeView1.hints.IdPrimke}" filterable="true" sortable="true"
+                   headerText="#{bindings.PrimkeStavkeView1.hints.IdPrimke.label}" id="c9">
+          <af:selectOneChoice value="#{row.bindings.IdPrimke.inputValue}" label="#{row.bindings.IdPrimke.label}"
+                              required="#{bindings.PrimkeStavkeView1.hints.IdPrimke.mandatory}"
+                              shortDesc="#{bindings.PrimkeStavkeView1.hints.IdPrimke.tooltip}" id="soc1">
+            <f:selectItems value="#{row.bindings.IdPrimke.items}" id="si1"/>
+            <f:validator binding="#{row.bindings.IdPrimke.validator}"/>
+          </af:selectOneChoice>
+        </af:column>
+        <af:column sortProperty="#{bindings.PrimkeStavkeView1.hints.IdArtikla}" filterable="true" sortable="true"
+                   headerText="#{bindings.PrimkeStavkeView1.hints.IdArtikla.label}" id="c1">
+          <af:inputListOfValues id="idArtiklaId"
+                                popupTitle="Search and Select: #{bindings.PrimkeStavkeView1.hints.IdArtikla.label}"
+                                value="#{row.bindings.IdArtikla.inputValue}"
+                                model="#{row.bindings.IdArtikla.listOfValuesModel}"
+                                required="#{bindings.PrimkeStavkeView1.hints.IdArtikla.mandatory}"
+                                columns="#{bindings.PrimkeStavkeView1.hints.IdArtikla.displayWidth}"
+                                shortDesc="#{bindings.PrimkeStavkeView1.hints.IdArtikla.tooltip}">
+            <f:validator binding="#{row.bindings.IdArtikla.validator}"/>
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.PrimkeStavkeView1.hints.IdArtikla.format}"/>
+          </af:inputListOfValues>
+        </af:column>
+        <af:column sortProperty="#{bindings.PrimkeStavkeView1.hints.Kolicina}" filterable="true" sortable="true"
+                   headerText="#{bindings.PrimkeStavkeView1.hints.Kolicina.label}" id="c6">
+          <af:inputText value="#{row.bindings.Kolicina.inputValue}"
+                        label="#{bindings.PrimkeStavkeView1.hints.Kolicina.label}"
+                        required="#{bindings.PrimkeStavkeView1.hints.Kolicina.mandatory}"
+                        columns="#{bindings.PrimkeStavkeView1.hints.Kolicina.displayWidth}"
+                        maximumLength="#{bindings.PrimkeStavkeView1.hints.Kolicina.precision}"
+                        shortDesc="#{bindings.PrimkeStavkeView1.hints.Kolicina.tooltip}" id="it1">
+            <f:validator binding="#{row.bindings.Kolicina.validator}"/>
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.PrimkeStavkeView1.hints.Kolicina.format}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PrimkeStavkeView1.hints.NabavnaCijena}" filterable="true"
+                   sortable="true" headerText="#{bindings.PrimkeStavkeView1.hints.NabavnaCijena.label}" id="c3">
+          <af:inputText value="#{row.bindings.NabavnaCijena.inputValue}"
+                        label="#{bindings.PrimkeStavkeView1.hints.NabavnaCijena.label}"
+                        required="#{bindings.PrimkeStavkeView1.hints.NabavnaCijena.mandatory}"
+                        columns="#{bindings.PrimkeStavkeView1.hints.NabavnaCijena.displayWidth}"
+                        maximumLength="#{bindings.PrimkeStavkeView1.hints.NabavnaCijena.precision}"
+                        shortDesc="#{bindings.PrimkeStavkeView1.hints.NabavnaCijena.tooltip}" id="it2">
+            <f:validator binding="#{row.bindings.NabavnaCijena.validator}"/>
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.PrimkeStavkeView1.hints.NabavnaCijena.format}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PrimkeStavkeView1.hints.UserDodavanja}" filterable="true"
+                   sortable="true" headerText="#{bindings.PrimkeStavkeView1.hints.UserDodavanja.label}" id="c10">
+          <af:inputText value="#{row.bindings.UserDodavanja.inputValue}"
+                        label="#{bindings.PrimkeStavkeView1.hints.UserDodavanja.label}"
+                        required="#{bindings.PrimkeStavkeView1.hints.UserDodavanja.mandatory}"
+                        columns="#{bindings.PrimkeStavkeView1.hints.UserDodavanja.displayWidth}"
+                        maximumLength="#{bindings.PrimkeStavkeView1.hints.UserDodavanja.precision}"
+                        shortDesc="#{bindings.PrimkeStavkeView1.hints.UserDodavanja.tooltip}" id="it3">
+            <f:validator binding="#{row.bindings.UserDodavanja.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PrimkeStavkeView1.hints.DatumDodavanja}" filterable="true"
+                   sortable="true" headerText="#{bindings.PrimkeStavkeView1.hints.DatumDodavanja.label}" id="c7">
+          <f:facet name="filter">
+            <af:inputDate value="#{bindings.PrimkeStavkeView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DatumDodavanja.value}"
+                          id="id4">
+              <af:convertDateTime pattern="#{bindings.PrimkeStavkeView1.hints.DatumDodavanja.format}"/>
+            </af:inputDate>
+          </f:facet>
+          <af:inputDate value="#{row.bindings.DatumDodavanja.inputValue}"
+                        label="#{bindings.PrimkeStavkeView1.hints.DatumDodavanja.label}"
+                        required="#{bindings.PrimkeStavkeView1.hints.DatumDodavanja.mandatory}"
+                        columns="#{bindings.PrimkeStavkeView1.hints.DatumDodavanja.displayWidth}"
+                        shortDesc="#{bindings.PrimkeStavkeView1.hints.DatumDodavanja.tooltip}" id="id3">
+            <f:validator binding="#{row.bindings.DatumDodavanja.validator}"/>
+            <af:convertDateTime pattern="#{bindings.PrimkeStavkeView1.hints.DatumDodavanja.format}"/>
+          </af:inputDate>
+        </af:column>
+        <af:column sortProperty="#{bindings.PrimkeStavkeView1.hints.UserIzmjene}" filterable="true" sortable="true"
+                   headerText="#{bindings.PrimkeStavkeView1.hints.UserIzmjene.label}" id="c11">
+          <af:inputText value="#{row.bindings.UserIzmjene.inputValue}"
+                        label="#{bindings.PrimkeStavkeView1.hints.UserIzmjene.label}"
+                        required="#{bindings.PrimkeStavkeView1.hints.UserIzmjene.mandatory}"
+                        columns="#{bindings.PrimkeStavkeView1.hints.UserIzmjene.displayWidth}"
+                        maximumLength="#{bindings.PrimkeStavkeView1.hints.UserIzmjene.precision}"
+                        shortDesc="#{bindings.PrimkeStavkeView1.hints.UserIzmjene.tooltip}" id="it4">
+            <f:validator binding="#{row.bindings.UserIzmjene.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PrimkeStavkeView1.hints.DatumIzmjene}" filterable="true"
+                   sortable="true" headerText="#{bindings.PrimkeStavkeView1.hints.DatumIzmjene.label}" id="c2">
+          <f:facet name="filter">
+            <af:inputDate value="#{bindings.PrimkeStavkeView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DatumIzmjene.value}"
+                          id="id1">
+              <af:convertDateTime pattern="#{bindings.PrimkeStavkeView1.hints.DatumIzmjene.format}"/>
+            </af:inputDate>
+          </f:facet>
+          <af:inputDate value="#{row.bindings.DatumIzmjene.inputValue}"
+                        label="#{bindings.PrimkeStavkeView1.hints.DatumIzmjene.label}"
+                        required="#{bindings.PrimkeStavkeView1.hints.DatumIzmjene.mandatory}"
+                        columns="#{bindings.PrimkeStavkeView1.hints.DatumIzmjene.displayWidth}"
+                        shortDesc="#{bindings.PrimkeStavkeView1.hints.DatumIzmjene.tooltip}" id="id2">
+            <f:validator binding="#{row.bindings.DatumIzmjene.validator}"/>
+            <af:convertDateTime pattern="#{bindings.PrimkeStavkeView1.hints.DatumIzmjene.format}"/>
+          </af:inputDate>
+        </af:column>
+        <af:column sortProperty="#{bindings.PrimkeStavkeView1.hints.Naziv}" filterable="true" sortable="true"
+                   headerText="#{bindings.PrimkeStavkeView1.hints.Naziv.label}" id="c4">
+          <af:inputText value="#{row.bindings.Naziv.inputValue}" label="#{bindings.PrimkeStavkeView1.hints.Naziv.label}"
+                        required="#{bindings.PrimkeStavkeView1.hints.Naziv.mandatory}"
+                        columns="#{bindings.PrimkeStavkeView1.hints.Naziv.displayWidth}"
+                        maximumLength="#{bindings.PrimkeStavkeView1.hints.Naziv.precision}"
+                        shortDesc="#{bindings.PrimkeStavkeView1.hints.Naziv.tooltip}" id="it7">
+            <f:validator binding="#{row.bindings.Naziv.validator}"/>
+          </af:inputText>
+        </af:column>
+      </af:table>
+    </f:facet>
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top">
+      <af:outputText value="Prikaz stavki" id="ot1"
+                     inlineStyle="color:Navy; font-size:x-large; font-family:Georgia, 'Times New Roman', times, Serif;"/>
+    </f:facet>
+  </af:panelStretchLayout>
+</ui:composition>

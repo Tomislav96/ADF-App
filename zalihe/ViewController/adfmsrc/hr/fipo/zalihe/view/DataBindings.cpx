@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.9.14" id="DataBindings"
+             SeparateXMLFiles="false" Package="hr.fipo.zalihe.view" ClientType="Generic">
+  <pageMap>
+    <page path="/WEB-INF/artikli-btf#task-flow-definition@Delete"
+          usageId="hr_oikt_project_no1_view_artikli_btf_task_flow_definition_DeletePageDef"/>
+    <page path="/WEB-INF/artikli-btf#task-flow-definition@Commit"
+          usageId="hr_oikt_project_no1_view_artikli_btf_task_flow_definition_CommitPageDef"/>
+    <page path="/WEB-INF/artikli-btf#task-flow-definition@CreateInsert"
+          usageId="hr_oikt_project_no1_view_artikli_btf_task_flow_definition_CreateInsertPageDef"/>
+    <page path="/WEB-INF/artikli-btf#task-flow-definition@Rollback"
+          usageId="hr_oikt_project_no1_view_artikli_btf_task_flow_definition_RollbackPageDef"/>
+    <page path="/Artikli.jsff" usageId="hr_fipo_zalihe_view_ArtikliPageDef"/>
+    <page path="/Artikli_izmjena.jsff" usageId="hr_fipo_zalihe_view_Artikli_izmjenaPageDef"/>
+    <page path="/WEB-INF/dobavljaci-btf.xml#dobavljaci-btf@Delete"
+          usageId="hr_fipo_zalihe_view_dobavljaci_btf_dobavljaci_btf_DeletePageDef"/>
+    <page path="/WEB-INF/dobavljaci-btf.xml#dobavljaci-btf@CreateInsert"
+          usageId="hr_fipo_zalihe_view_dobavljaci_btf_dobavljaci_btf_CreateInsertPageDef"/>
+    <page path="/WEB-INF/dobavljaci-btf.xml#dobavljaci-btf@Commit"
+          usageId="hr_fipo_zalihe_view_dobavljaci_btf_dobavljaci_btf_CommitPageDef"/>
+    <page path="/WEB-INF/dobavljaci-btf.xml#dobavljaci-btf@Rollback"
+          usageId="hr_fipo_zalihe_view_dobavljaci_btf_dobavljaci_btf_RollbackPageDef"/>
+    <page path="/Dobavljaci.jsff" usageId="hr_fipo_zalihe_view_DobavljaciPageDef"/>
+    <page path="/Dobavljaci_Izmjena.jsff" usageId="hr_fipo_zalihe_view_Dobavljaci_IzmjenaPageDef"/>
+    <page path="/WEB-INF/izd_stav-btf.xml#izd_stav-btf@Delete"
+          usageId="hr_fipo_zalihe_view_izd_stav_btf_izd_stav_btf_DeletePageDef"/>
+    <page path="/WEB-INF/izd_stav-btf.xml#izd_stav-btf@Commit"
+          usageId="hr_fipo_zalihe_view_izd_stav_btf_izd_stav_btf_CommitPageDef"/>
+    <page path="/WEB-INF/izd_stav-btf.xml#izd_stav-btf@Rollback"
+          usageId="hr_fipo_zalihe_view_izd_stav_btf_izd_stav_btf_RollbackPageDef"/>
+    <page path="/WEB-INF/izd_stav-btf.xml#izd_stav-btf@CreateInsert"
+          usageId="hr_fipo_zalihe_view_izd_stav_btf_izd_stav_btf_CreateInsertPageDef"/>
+    <page path="/Izd_Stavka.jsff" usageId="hr_fipo_zalihe_view_Izd_StavkaPageDef"/>
+    <page path="/Izd_Stavka_form.jsff" usageId="hr_fipo_zalihe_view_Izd_Stavka_formPageDef"/>
+    <page path="/WEB-INF/izd_zag-btf.xml#izd_zag-btf@CreateInsert"
+          usageId="hr_fipo_zalihe_view_izd_zag_btf_izd_zag_btf_CreateInsertPageDef"/>
+    <page path="/WEB-INF/izd_zag-btf.xml#izd_zag-btf@Rollback"
+          usageId="hr_fipo_zalihe_view_izd_zag_btf_izd_zag_btf_RollbackPageDef"/>
+    <page path="/WEB-INF/izd_zag-btf.xml#izd_zag-btf@Commit"
+          usageId="hr_fipo_zalihe_view_izd_zag_btf_izd_zag_btf_CommitPageDef"/>
+    <page path="/WEB-INF/izd_zag-btf.xml#izd_zag-btf@Delete"
+          usageId="hr_fipo_zalihe_view_izd_zag_btf_izd_zag_btf_DeletePageDef"/>
+    <page path="/Izd_Zag.jsff" usageId="hr_fipo_zalihe_view_Izd_ZagPageDef"/>
+    <page path="/Izd_Zaglavlje_form.jsff" usageId="hr_fipo_zalihe_view_Izd_Zaglavlje_formPageDef"/>
+    <page path="/WEB-INF/MjestoTroska-btf.xml#MjestoTroska-btf@Delete"
+          usageId="hr_fipo_zalihe_view_MjestoTroska_btf_MjestoTroska_btf_DeletePageDef"/>
+    <page path="/WEB-INF/MjestoTroska-btf.xml#MjestoTroska-btf@CreateInsert"
+          usageId="hr_fipo_zalihe_view_MjestoTroska_btf_MjestoTroska_btf_CreateInsertPageDef"/>
+    <page path="/WEB-INF/MjestoTroska-btf.xml#MjestoTroska-btf@Rollback"
+          usageId="hr_fipo_zalihe_view_MjestoTroska_btf_MjestoTroska_btf_RollbackPageDef"/>
+    <page path="/WEB-INF/MjestoTroska-btf.xml#MjestoTroska-btf@Commit"
+          usageId="hr_fipo_zalihe_view_MjestoTroska_btf_MjestoTroska_btf_CommitPageDef"/>
+    <page path="/MjestoTroska.jsff" usageId="hr_fipo_zalihe_view_MjestoTroskaPageDef"/>
+    <page path="/MjestoTroska_izmjena.jsff" usageId="hr_fipo_zalihe_view_MjestoTroska_izmjenaPageDef"/>
+    <page path="/WEB-INF/prim_stav-btf.xml#prim_stav-btf@Delete"
+          usageId="hr_fipo_zalihe_view_prim_stav_btf_prim_stav_btf_DeletePageDef"/>
+    <page path="/WEB-INF/prim_stav-btf.xml#prim_stav-btf@Commit"
+          usageId="hr_fipo_zalihe_view_prim_stav_btf_prim_stav_btf_CommitPageDef"/>
+    <page path="/WEB-INF/prim_stav-btf.xml#prim_stav-btf@Rollback"
+          usageId="hr_fipo_zalihe_view_prim_stav_btf_prim_stav_btf_RollbackPageDef"/>
+    <page path="/WEB-INF/prim_stav-btf.xml#prim_stav-btf@CreateInsert"
+          usageId="hr_fipo_zalihe_view_prim_stav_btf_prim_stav_btf_CreateInsertPageDef"/>
+    <page path="/Prim_Stavke.jsff" usageId="hr_fipo_zalihe_view_Prim_StavkePageDef"/>
+    <page path="/Prim_Stavke_form.jsff" usageId="hr_fipo_zalihe_view_Prim_Stavke_formPageDef"/>
+    <page path="/WEB-INF/prim_zag-btf.xml#primke-btf@CreateInsert"
+          usageId="hr_fipo_zalihe_view_prim_zag_btf_primke_btf_CreateInsertPageDef"/>
+    <page path="/WEB-INF/prim_zag-btf.xml#primke-btf@Rollback"
+          usageId="hr_fipo_zalihe_view_prim_zag_btf_primke_btf_RollbackPageDef"/>
+    <page path="/WEB-INF/prim_zag-btf.xml#primke-btf@Commit"
+          usageId="hr_fipo_zalihe_view_prim_zag_btf_primke_btf_CommitPageDef"/>
+    <page path="/WEB-INF/prim_zag-btf.xml#primke-btf@Delete"
+          usageId="hr_fipo_zalihe_view_prim_zag_btf_primke_btf_DeletePageDef"/>
+    <page path="/Zaglavlje_prim.jsff" usageId="hr_fipo_zalihe_view_Zaglavlje_primPageDef"/>
+    <page path="/Zaglavlje_prim_form.jsff" usageId="hr_fipo_zalihe_view_Zaglavlje_prim_formPageDef"/>
+    <page path="/WEB-INF/Skladiste-btf.xml#Skladiste-btf@Delete"
+          usageId="hr_fipo_zalihe_view_Skladiste_btf_Skladiste_btf_DeletePageDef"/>
+    <page path="/WEB-INF/Skladiste-btf.xml#Skladiste-btf@CreateInsert"
+          usageId="hr_fipo_zalihe_view_Skladiste_btf_Skladiste_btf_CreateInsertPageDef"/>
+    <page path="/WEB-INF/Skladiste-btf.xml#Skladiste-btf@Commit"
+          usageId="hr_fipo_zalihe_view_Skladiste_btf_Skladiste_btf_CommitPageDef"/>
+    <page path="/WEB-INF/Skladiste-btf.xml#Skladiste-btf@Rollback"
+          usageId="hr_fipo_zalihe_view_Skladiste_btf_Skladiste_btf_RollbackPageDef"/>
+    <page path="/skladiste.jsff" usageId="hr_fipo_zalihe_view_skladistePageDef"/>
+    <page path="/Skladiste_izmjena.jsff" usageId="hr_fipo_zalihe_view_Skladiste_izmjenaPageDef"/>
+    <page path="/WEB-INF/artikli-btf.xml#artikli-btf@Delete"
+          usageId="hr_fipo_zalihe_view_artikli_btf_artikli_btf_DeletePageDef"/>
+    <page path="/WEB-INF/artikli-btf.xml#artikli-btf@Rollback"
+          usageId="hr_fipo_zalihe_view_artikli_btf_artikli_btf_RollbackPageDef"/>
+    <page path="/WEB-INF/artikli-btf.xml#artikli-btf@CreateInsert"
+          usageId="hr_fipo_zalihe_view_artikli_btf_artikli_btf_CreateInsertPageDef"/>
+    <page path="/Pocetna.jsff" usageId="hr_fipo_zalihe_view_PocetnaPageDef"/>
+    <page path="/WEB-INF/pocetna-btf.xml#pocetna-btf@artikli-btf"
+          usageId="hr_fipo_zalihe_view_pocetna_btf_pocetna_btf_artikli_btfPageDef"/>
+    <page path="/WEB-INF/artikli-btf.xml#artikli-btf@Commit"
+          usageId="hr_fipo_zalihe_view_artikli_btf_artikli_btf_CommitPageDef"/>
+    <page path="/Zalihe.jsff" usageId="hr_fipo_zalihe_view_ZalihePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="hr_oikt_project_no1_view_artikli_btf_task_flow_definition_DeletePageDef"
+          path="hr.fipo.zalihe.view.pageDefs.artikli_btf_task_flow_definition_DeletePageDef"/>
+    <page id="hr_oikt_project_no1_view_artikli_btf_task_flow_definition_CommitPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.artikli_btf_task_flow_definition_CommitPageDef"/>
+    <page id="hr_oikt_project_no1_view_artikli_btf_task_flow_definition_CreateInsertPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.artikli_btf_task_flow_definition_CreateInsertPageDef"/>
+    <page id="hr_oikt_project_no1_view_artikli_btf_task_flow_definition_RollbackPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.artikli_btf_task_flow_definition_RollbackPageDef"/>
+    <page id="hr_fipo_zalihe_view_ArtikliPageDef" path="hr.fipo.zalihe.view.pageDefs.ArtikliPageDef"/>
+    <page id="hr_fipo_zalihe_view_Artikli_izmjenaPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.Artikli_izmjenaPageDef"/>
+    <page id="hr_fipo_zalihe_view_dobavljaci_btf_dobavljaci_btf_DeletePageDef"
+          path="hr.fipo.zalihe.view.pageDefs.dobavljaci_btf_dobavljaci_btf_DeletePageDef"/>
+    <page id="hr_fipo_zalihe_view_dobavljaci_btf_dobavljaci_btf_CreateInsertPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.dobavljaci_btf_dobavljaci_btf_CreateInsertPageDef"/>
+    <page id="hr_fipo_zalihe_view_dobavljaci_btf_dobavljaci_btf_CommitPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.dobavljaci_btf_dobavljaci_btf_CommitPageDef"/>
+    <page id="hr_fipo_zalihe_view_dobavljaci_btf_dobavljaci_btf_RollbackPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.dobavljaci_btf_dobavljaci_btf_RollbackPageDef"/>
+    <page id="hr_fipo_zalihe_view_DobavljaciPageDef" path="hr.fipo.zalihe.view.pageDefs.DobavljaciPageDef"/>
+    <page id="hr_fipo_zalihe_view_Dobavljaci_IzmjenaPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.Dobavljaci_IzmjenaPageDef"/>
+    <page id="hr_fipo_zalihe_view_izd_stav_btf_izd_stav_btf_DeletePageDef"
+          path="hr.fipo.zalihe.view.pageDefs.izd_stav_btf_izd_stav_btf_DeletePageDef"/>
+    <page id="hr_fipo_zalihe_view_izd_stav_btf_izd_stav_btf_CommitPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.izd_stav_btf_izd_stav_btf_CommitPageDef"/>
+    <page id="hr_fipo_zalihe_view_izd_stav_btf_izd_stav_btf_RollbackPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.izd_stav_btf_izd_stav_btf_RollbackPageDef"/>
+    <page id="hr_fipo_zalihe_view_izd_stav_btf_izd_stav_btf_CreateInsertPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.izd_stav_btf_izd_stav_btf_CreateInsertPageDef"/>
+    <page id="hr_fipo_zalihe_view_Izd_StavkaPageDef" path="hr.fipo.zalihe.view.pageDefs.Izd_StavkaPageDef"/>
+    <page id="hr_fipo_zalihe_view_Izd_Stavka_formPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.Izd_Stavka_formPageDef"/>
+    <page id="hr_fipo_zalihe_view_izd_zag_btf_izd_zag_btf_CreateInsertPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.izd_zag_btf_izd_zag_btf_CreateInsertPageDef"/>
+    <page id="hr_fipo_zalihe_view_izd_zag_btf_izd_zag_btf_RollbackPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.izd_zag_btf_izd_zag_btf_RollbackPageDef"/>
+    <page id="hr_fipo_zalihe_view_izd_zag_btf_izd_zag_btf_CommitPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.izd_zag_btf_izd_zag_btf_CommitPageDef"/>
+    <page id="hr_fipo_zalihe_view_izd_zag_btf_izd_zag_btf_DeletePageDef"
+          path="hr.fipo.zalihe.view.pageDefs.izd_zag_btf_izd_zag_btf_DeletePageDef"/>
+    <page id="hr_fipo_zalihe_view_Izd_ZagPageDef" path="hr.fipo.zalihe.view.pageDefs.Izd_ZagPageDef"/>
+    <page id="hr_fipo_zalihe_view_Izd_Zaglavlje_formPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.Izd_Zaglavlje_formPageDef"/>
+    <page id="hr_fipo_zalihe_view_MjestoTroska_btf_MjestoTroska_btf_DeletePageDef"
+          path="hr.fipo.zalihe.view.pageDefs.MjestoTroska_btf_MjestoTroska_btf_DeletePageDef"/>
+    <page id="hr_fipo_zalihe_view_MjestoTroska_btf_MjestoTroska_btf_CreateInsertPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.MjestoTroska_btf_MjestoTroska_btf_CreateInsertPageDef"/>
+    <page id="hr_fipo_zalihe_view_MjestoTroska_btf_MjestoTroska_btf_RollbackPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.MjestoTroska_btf_MjestoTroska_btf_RollbackPageDef"/>
+    <page id="hr_fipo_zalihe_view_MjestoTroska_btf_MjestoTroska_btf_CommitPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.MjestoTroska_btf_MjestoTroska_btf_CommitPageDef"/>
+    <page id="hr_fipo_zalihe_view_MjestoTroskaPageDef" path="hr.fipo.zalihe.view.pageDefs.MjestoTroskaPageDef"/>
+    <page id="hr_fipo_zalihe_view_MjestoTroska_izmjenaPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.MjestoTroska_izmjenaPageDef"/>
+    <page id="hr_fipo_zalihe_view_prim_stav_btf_prim_stav_btf_DeletePageDef"
+          path="hr.fipo.zalihe.view.pageDefs.prim_stav_btf_prim_stav_btf_DeletePageDef"/>
+    <page id="hr_fipo_zalihe_view_prim_stav_btf_prim_stav_btf_CommitPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.prim_stav_btf_prim_stav_btf_CommitPageDef"/>
+    <page id="hr_fipo_zalihe_view_prim_stav_btf_prim_stav_btf_RollbackPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.prim_stav_btf_prim_stav_btf_RollbackPageDef"/>
+    <page id="hr_fipo_zalihe_view_prim_stav_btf_prim_stav_btf_CreateInsertPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.prim_stav_btf_prim_stav_btf_CreateInsertPageDef"/>
+    <page id="hr_fipo_zalihe_view_Prim_StavkePageDef" path="hr.fipo.zalihe.view.pageDefs.Prim_StavkePageDef"/>
+    <page id="hr_fipo_zalihe_view_Prim_Stavke_formPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.Prim_Stavke_formPageDef"/>
+    <page id="hr_fipo_zalihe_view_prim_zag_btf_primke_btf_CreateInsertPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.prim_zag_btf_primke_btf_CreateInsertPageDef"/>
+    <page id="hr_fipo_zalihe_view_prim_zag_btf_primke_btf_RollbackPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.prim_zag_btf_primke_btf_RollbackPageDef"/>
+    <page id="hr_fipo_zalihe_view_prim_zag_btf_primke_btf_CommitPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.prim_zag_btf_primke_btf_CommitPageDef"/>
+    <page id="hr_fipo_zalihe_view_prim_zag_btf_primke_btf_DeletePageDef"
+          path="hr.fipo.zalihe.view.pageDefs.prim_zag_btf_primke_btf_DeletePageDef"/>
+    <page id="hr_fipo_zalihe_view_Zaglavlje_primPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.Zaglavlje_primPageDef"/>
+    <page id="hr_fipo_zalihe_view_Zaglavlje_prim_formPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.Zaglavlje_prim_formPageDef"/>
+    <page id="hr_fipo_zalihe_view_Skladiste_btf_Skladiste_btf_DeletePageDef"
+          path="hr.fipo.zalihe.view.pageDefs.Skladiste_btf_Skladiste_btf_DeletePageDef"/>
+    <page id="hr_fipo_zalihe_view_Skladiste_btf_Skladiste_btf_CreateInsertPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.Skladiste_btf_Skladiste_btf_CreateInsertPageDef"/>
+    <page id="hr_fipo_zalihe_view_Skladiste_btf_Skladiste_btf_CommitPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.Skladiste_btf_Skladiste_btf_CommitPageDef"/>
+    <page id="hr_fipo_zalihe_view_Skladiste_btf_Skladiste_btf_RollbackPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.Skladiste_btf_Skladiste_btf_RollbackPageDef"/>
+    <page id="hr_fipo_zalihe_view_skladistePageDef" path="hr.fipo.zalihe.view.pageDefs.skladistePageDef"/>
+    <page id="hr_fipo_zalihe_view_Skladiste_izmjenaPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.Skladiste_izmjenaPageDef"/>
+    <page id="hr_fipo_zalihe_view_artikli_btf_artikli_btf_DeletePageDef"
+          path="hr.fipo.zalihe.view.pageDefs.artikli_btf_artikli_btf_DeletePageDef"/>
+    <page id="hr_fipo_zalihe_view_artikli_btf_artikli_btf_RollbackPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.artikli_btf_artikli_btf_RollbackPageDef"/>
+    <page id="hr_fipo_zalihe_view_artikli_btf_artikli_btf_CreateInsertPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.artikli_btf_artikli_btf_CreateInsertPageDef"/>
+    <page id="hr_fipo_zalihe_view_PocetnaPageDef" path="hr.fipo.zalihe.view.pageDefs.PocetnaPageDef"/>
+    <page id="hr_fipo_zalihe_view_pocetna_btf_pocetna_btf_artikli_btfPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.pocetna_btf_pocetna_btf_artikli_btfPageDef"/>
+    <page id="hr_fipo_zalihe_view_artikli_btf_artikli_btf_CommitPageDef"
+          path="hr.fipo.zalihe.view.pageDefs.artikli_btf_artikli_btf_CommitPageDef"/>
+    <page id="hr_fipo_zalihe_view_ZalihePageDef" path="hr.fipo.zalihe.view.pageDefs.ZalihePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="zaliheAMDataControl" Package="hr.fipo.zalihe.model.am"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="zaliheAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14"
+                id="izd_stav_btf_izd_stav_btf_DeletePageDef" Package="hr.oikt.project_no1.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="IzdatniceStavkeView1" RangeSize="10" DataControl="zaliheAMDataControl"
+              id="IzdatniceStavkeView1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="IzdatniceStavkeView1Iterator" id="Delete"
+            InstanceName="zaliheAMDataControl.IzdatniceStavkeView1" DataControl="zaliheAMDataControl"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

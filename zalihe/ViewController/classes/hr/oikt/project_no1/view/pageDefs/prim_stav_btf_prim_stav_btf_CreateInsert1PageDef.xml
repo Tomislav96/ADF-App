@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36"
+                id="prim_stav_btf_prim_stav_btf_CreateInsert1PageDef" Package="hr.oikt.project_no1.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="PrimkaStaView1" RangeSize="25" DataControl="no1_AMDataControl" id="PrimkaStaView1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="PrimkaStaView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

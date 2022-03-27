@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14"
+                id="artikli_btf_artikli_btf_CreateInsertPageDef" Package="hr.fipo.zalihe.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ArtikliView1" RangeSize="10" DataControl="zaliheAMDataControl" id="ArtikliView1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="ArtikliView1Iterator" id="CreateInsert" InstanceName="zaliheAMDataControl.ArtikliView1"
+            DataControl="zaliheAMDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

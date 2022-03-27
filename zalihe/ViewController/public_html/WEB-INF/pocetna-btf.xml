@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="pocetna-btf">
+    <default-activity>Pocetna</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="Pocetna">
+      <page>/Pocetna.jsff</page>
+    </view>
+    <task-flow-call id="dobavljaci-btf">
+      <task-flow-reference>
+        <document>/WEB-INF/dobavljaci-btf.xml</document>
+        <id>dobavljaci-btf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="MjestoTroska-btf">
+      <task-flow-reference>
+        <document>/WEB-INF/MjestoTroska-btf.xml</document>
+        <id>MjestoTroska-btf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="Skladiste-btf">
+      <task-flow-reference>
+        <document>/WEB-INF/Skladiste-btf.xml</document>
+        <id>Skladiste-btf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="zalihe-btf">
+      <task-flow-reference>
+        <document>/WEB-INF/zalihe-btf.xml</document>
+        <id>zalihe-btf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="primke-btf">
+      <task-flow-reference>
+        <document>/WEB-INF/prim_zag-btf.xml</document>
+        <id>primke-btf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="izd_zag-btf">
+      <task-flow-reference>
+        <document>/WEB-INF/izd_zag-btf.xml</document>
+        <id>izd_zag-btf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="artikli-btf">
+      <task-flow-reference>
+        <document>/WEB-INF/artikli-btf.xml</document>
+        <id>artikli-btf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <control-flow-rule id="__1">
+      <from-activity-id>Pocetna</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>go_artikli</from-outcome>
+        <to-activity-id>artikli-btf</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>go_dobavljaci</from-outcome>
+        <to-activity-id>dobavljaci-btf</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__4">
+        <from-outcome>go_MT</from-outcome>
+        <to-activity-id>MjestoTroska-btf</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__5">
+        <from-outcome>go_skl</from-outcome>
+        <to-activity-id>Skladiste-btf</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__6">
+        <from-outcome>go_zalihe</from-outcome>
+        <to-activity-id>zalihe-btf</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__8">
+        <from-outcome>go_primke</from-outcome>
+        <to-activity-id>primke-btf</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__7">
+        <from-outcome>go_izdatnice</from-outcome>
+        <to-activity-id>izd_zag-btf</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

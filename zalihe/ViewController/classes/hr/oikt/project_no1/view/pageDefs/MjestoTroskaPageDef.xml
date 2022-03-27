@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="MjestoTroskaPageDef"
+                Package="hr.oikt.project_no1.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="MjestaTroskaView1" RangeSize="25" DataControl="zaliheAMDataControl"
+              id="MjestaTroskaView1Iterator"/>
+    <searchRegion Binds="MjestaTroskaView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MjestaTroskaView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="MjestaTroskaView1Iterator" id="MjestaTroskaView1">
+      <nodeDefinition DefName="hr.fipo.zalihe.model.vo.MjestaTroskaVO" Name="MjestaTroskaView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Sifra"/>
+          <Item Value="Naziv"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="UserIzmjene"/>
+          <Item Value="DatumIzmjene"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

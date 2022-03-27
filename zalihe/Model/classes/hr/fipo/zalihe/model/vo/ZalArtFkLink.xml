@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ZalArtFkLink"
+  Version="11.1.2.64.36"
+  EntityAssociation="hr.fipo.zalihe.model.eo.ZalArtFkAssoc">
+  <ViewLinkDefEnd
+    Name="ArtikliView"
+    Cardinality="1"
+    Source="true"
+    Owner="hr.fipo.zalihe.model.vo.ArtikliView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="ArtikliView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fipo.zalihe.model.vo.ArtikliView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="ZalihaView"
+    Cardinality="-1"
+    Owner="hr.fipo.zalihe.model.vo.ZalihaView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="ZalihaView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fipo.zalihe.model.vo.ZalihaView.IdArtikla"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

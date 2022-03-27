@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="Prim_StavkePageDef"
+                Package="hr.fipo.zalihe.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PrimkeStavkeView1" RangeSize="25" DataControl="zaliheAMDataControl"
+              id="PrimkeStavkeView1Iterator"/>
+    <searchRegion Binds="PrimkeStavkeView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PrimkeStavkeView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PrimkeStavkeView1Iterator" id="PrimkeStavkeView1">
+      <nodeDefinition DefName="hr.fipo.zalihe.model.vo.PrimkeStavkeVO" Name="PrimkeStavkeView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="IdPrimke"/>
+          <Item Value="IdArtikla"/>
+          <Item Value="Kolicina"/>
+          <Item Value="NabavnaCijena"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="UserIzmjene"/>
+          <Item Value="DatumIzmjene"/>
+          <Item Value="Naziv"/>
+          <Item Value="Id1"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

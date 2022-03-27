@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="hr.oikt.project_no1.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/Artikli.jsff" usageId="hr_oikt_project_no1_view_ArtikliPageDef"/>
+    <page path="/Artikli_izmjena.jsff" usageId="hr_oikt_project_no1_view_Artikli_izmjenaPageDef"/>
+    <page path="/WEB-INF/artikli-btf.xml#task-flow-definition@Commit"
+          usageId="hr_oikt_project_no1_view_artikli_task_flow_definition_CommitPageDef"/>
+    <page path="/home_no1.jsf" usageId="hr_oikt_project_no1_view_home_no1PageDef"/>
+    <page path="/Dobavljaci.jsff" usageId="hr_oikt_project_no1_view_DobavljaciPageDef"/>
+    <page path="/Dobavljaci_izmjeni.jsff" usageId="hr_oikt_project_no1_view_Dobavljaci_izmjeniPageDef"/>
+    <page path="/WEB-INF/dobavljaci-btf.xml#dobavljaci-btf@Commit"
+          usageId="hr_oikt_project_no1_view_dobavljaci_btf_dobavljaci_btf_CommitPageDef"/>
+    <page path="/no1_home.jsf" usageId="hr_oikt_project_no1_view_no1_homePageDef"/>
+    <page path="/WEB-INF/MjestoTroska-btf.xml#MjestoTroska-btf@Commit"
+          usageId="hr_oikt_project_no1_view_MjestoTroska_btf_MjestoTroska_btf_CommitPageDef"/>
+    <page path="/WEB-INF/Skladiste-btf.xml#Skladiste-btf@Commit"
+          usageId="hr_oikt_project_no1_view_Skladiste_btf_Skladiste_btf_CommitPageDef"/>
+    <page path="/skladiste.jsff" usageId="hr_oikt_project_no1_view_skladistePageDef"/>
+    <page path="/Skladiste_izmjena.jsff" usageId="hr_oikt_project_no1_view_skladiste_detPageDef"/>
+    <page path="/MjestoTroska.jsff" usageId="hr_oikt_project_no1_view_MjestoTroskaPageDef"/>
+    <page path="/MjestoTroska_izmjena.jsff" usageId="hr_oikt_project_no1_view_MjestoTroska_detPageDef"/>
+    <page path="/WEB-INF/artikli-btf.xml#task-flow-definition@Delete"
+          usageId="hr_oikt_project_no1_view_artikli_btf_task_flow_definition_DeletePageDef"/>
+    <page path="/WEB-INF/dobavljaci-btf.xml#dobavljaci-btf@Delete"
+          usageId="hr_oikt_project_no1_view_dobavljaci_btf_dobavljaci_btf_DeletePageDef"/>
+    <page path="/WEB-INF/MjestoTroska-btf.xml#MjestoTroska-btf@Delete"
+          usageId="hr_oikt_project_no1_view_MjestoTroska_btf_MjestoTroska_btf_DeletePageDef"/>
+    <page path="/WEB-INF/Skladiste-btf.xml#Skladiste-btf@Delete"
+          usageId="hr_oikt_project_no1_view_Skladiste_btf_Skladiste_btf_DeletePageDef"/>
+    <page path="/Dobavljaci_Izmjena.jsff" usageId="hr_oikt_project_no1_view_Dobavljaci_IzmjenaPageDef"/>
+    <page path="/Zalihe.jsff" usageId="hr_oikt_project_no1_view_ZalihePageDef"/>
+    <page path="/WEB-INF/artikli-btf.xml#task-flow-definition@CreateInsert"
+          usageId="hr_oikt_project_no1_view_artikli_btf_task_flow_definition_CreateInsertPageDef"/>
+    <page path="/WEB-INF/dobavljaci-btf.xml#dobavljaci-btf@CreateInsert"
+          usageId="hr_oikt_project_no1_view_dobavljaci_btf_dobavljaci_btf_CreateInsertPageDef"/>
+    <page path="/WEB-INF/MjestoTroska-btf.xml#MjestoTroska-btf@CreateInsert"
+          usageId="hr_oikt_project_no1_view_MjestoTroska_btf_MjestoTroska_btf_CreateInsertPageDef"/>
+    <page path="/WEB-INF/Skladiste-btf.xml#Skladiste-btf@CreateInsert"
+          usageId="hr_oikt_project_no1_view_Skladiste_btf_Skladiste_btf_CreateInsertPageDef"/>
+    <page path="/Zaglavlje_prim.jsff" usageId="hr_oikt_project_no1_view_Zaglavlje_primPageDef"/>
+    <page path="/Zaglavlje_prim_form.jsff" usageId="hr_oikt_project_no1_view_Zaglavlje_prim_formPageDef"/>
+    <page path="/WEB-INF/prim_zag-btf.xml#primke-btf@CreateInsert"
+          usageId="hr_oikt_project_no1_view_primke_btf_primke_btf_CreateInsertPageDef"/>
+    <page path="/Prim_Stavke.jsff" usageId="hr_oikt_project_no1_view_Prim_StavkePageDef"/>
+    <page path="/WEB-INF/prim_zag-btf.xml#primke-btf@Commit"
+          usageId="hr_oikt_project_no1_view_prim_zag_btf_primke_btf_CommitPageDef"/>
+    <page path="/Stavke_form.jsff" usageId="hr_oikt_project_no1_view_Stavke_formPageDef"/>
+    <page path="/Stavke_prim.jsff" usageId="hr_oikt_project_no1_view_Stavke_primPageDef"/>
+    <page path="/Stavke_prim_form.jsff" usageId="hr_oikt_project_no1_view_Stavke_prim_formPageDef"/>
+    <page path="/Stavke_form_prim.jsff" usageId="hr_oikt_project_no1_view_Stavke_form_primPageDef"/>
+    <page path="/Prim_Stavke_form.jsff" usageId="hr_oikt_project_no1_view_Prim_Stavke_formPageDef"/>
+    <page path="/WEB-INF/prim_stav-btf.xml#prim_stav-btf@CreateInsert"
+          usageId="hr_oikt_project_no1_view_prim_stav_btf_prim_stav_btf_CreateInsertPageDef"/>
+    <page path="/WEB-INF/prim_stav-btf.xml#prim_stav-btf@Commit"
+          usageId="hr_oikt_project_no1_view_prim_stav_btf_prim_stav_btf_CommitPageDef"/>
+    <page path="/WEB-INF/prim_zag-btf.xml#primke-btf@Delete"
+          usageId="hr_oikt_project_no1_view_prim_zag_btf_primke_btf_DeletePageDef"/>
+    <page path="/WEB-INF/prim_stav-btf.xml#prim_stav-btf@Delete"
+          usageId="hr_oikt_project_no1_view_prim_stav_btf_prim_stav_btf_DeletePageDef"/>
+    <page path="/Izd_Zag.jsff" usageId="hr_oikt_project_no1_view_Izd_ZagPageDef"/>
+    <page path="/WEB-INF/izd_zag-btf.xml#izd_zag-btf@CreateInsert"
+          usageId="hr_oikt_project_no1_view_izd_zag_btf_izd_zag_btf_CreateInsertPageDef"/>
+    <page path="/WEB-INF/izd_zag-btf.xml#izd_zag-btf@Delete"
+          usageId="hr_oikt_project_no1_view_izd_zag_btf_izd_zag_btf_DeletePageDef"/>
+    <page path="/WEB-INF/izd_zag-btf.xml#izd_zag-btf@Commit"
+          usageId="hr_oikt_project_no1_view_izd_zag_btf_izd_zag_btf_CommitPageDef"/>
+    <page path="/Izd_Zaglavlje_form.jsff" usageId="hr_oikt_project_no1_view_Izd_Zaglavlje_formPageDef"/>
+    <page path="/WEB-INF/izd_stav-btf.xml#izd_stav-btf@CreateInsert"
+          usageId="hr_oikt_project_no1_view_izd_stav_btf_izd_stav_btf_CreateInsertPageDef"/>
+    <page path="/WEB-INF/izd_stav-btf.xml#izd_stav-btf@Delete"
+          usageId="hr_oikt_project_no1_view_izd_stav_btf_izd_stav_btf_DeletePageDef"/>
+    <page path="/WEB-INF/izd_stav-btf.xml#izd_stav-btf@Commit"
+          usageId="hr_oikt_project_no1_view_izd_stav_btf_izd_stav_btf_CommitPageDef"/>
+    <page path="/Izd_Stavka.jsff" usageId="hr_oikt_project_no1_view_Izd_StavkaPageDef"/>
+    <page path="/Izd_Stavka_form.jsff" usageId="hr_oikt_project_no1_view_Izd_Stavka_formPageDef"/>
+    <page path="/WEB-INF/artikli-btf.xml#task-flow-definition@Rollback"
+          usageId="hr_oikt_project_no1_view_artikli_btf_task_flow_definition_RollbackPageDef"/>
+    <page path="/WEB-INF/dobavljaci-btf.xml#dobavljaci-btf@Rollback"
+          usageId="hr_oikt_project_no1_view_dobavljaci_btf_dobavljaci_btf_RollbackPageDef"/>
+    <page path="/WEB-INF/izd_stav-btf.xml#izd_stav-btf@Rollback"
+          usageId="hr_oikt_project_no1_view_izd_stav_btf_izd_stav_btf_RollbackPageDef"/>
+    <page path="/WEB-INF/izd_zag-btf.xml#izd_zag-btf@Rollback"
+          usageId="hr_oikt_project_no1_view_izd_zag_btf_izd_zag_btf_RollbackPageDef"/>
+    <page path="/WEB-INF/MjestoTroska-btf.xml#MjestoTroska-btf@Rollback"
+          usageId="hr_oikt_project_no1_view_MjestoTroska_btf_MjestoTroska_btf_RollbackPageDef"/>
+    <page path="/WEB-INF/prim_stav-btf.xml#prim_stav-btf@Rollback"
+          usageId="hr_oikt_project_no1_view_prim_stav_btf_prim_stav_btf_RollbackPageDef"/>
+    <page path="/WEB-INF/prim_zag-btf.xml#primke-btf@Rollback"
+          usageId="hr_oikt_project_no1_view_prim_zag_btf_primke_btf_RollbackPageDef"/>
+    <page path="/WEB-INF/Skladiste-btf.xml#Skladiste-btf@Rollback"
+          usageId="hr_oikt_project_no1_view_Skladiste_btf_Skladiste_btf_RollbackPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="hr_oikt_project_no1_view_ArtikliPageDef" path="hr.oikt.project_no1.view.pageDefs.ArtikliPageDef"/>
+    <page id="hr_oikt_project_no1_view_Artikli_izmjenaPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.Artikli_izmjenaPageDef"/>
+    <page id="hr_oikt_project_no1_view_artikli_task_flow_definition_CommitPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.artikli_task_flow_definition_CommitPageDef"/>
+    <page id="hr_oikt_project_no1_view_home_no1PageDef" path="hr.oikt.project_no1.view.pageDefs.home_no1PageDef"/>
+    <page id="hr_oikt_project_no1_view_DobavljaciPageDef" path="hr.oikt.project_no1.view.pageDefs.DobavljaciPageDef"/>
+    <page id="hr_oikt_project_no1_view_Dobavljaci_izmjeniPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.Dobavljaci_izmjeniPageDef"/>
+    <page id="hr_oikt_project_no1_view_dobavljaci_btf_dobavljaci_btf_CommitPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.dobavljaci_btf_dobavljaci_btf_CommitPageDef"/>
+    <page id="hr_oikt_project_no1_view_no1_homePageDef" path="hr.oikt.project_no1.view.pageDefs.no1_homePageDef"/>
+    <page id="hr_oikt_project_no1_view_MjestoTroska_btf_MjestoTroska_btf_CommitPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.MjestoTroska_btf_MjestoTroska_btf_CommitPageDef"/>
+    <page id="hr_oikt_project_no1_view_Skladiste_btf_Skladiste_btf_CommitPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.Skladiste_btf_Skladiste_btf_CommitPageDef"/>
+    <page id="hr_oikt_project_no1_view_skladistePageDef" path="hr.oikt.project_no1.view.pageDefs.skladistePageDef"/>
+    <page id="hr_oikt_project_no1_view_skladiste_detPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.skladiste_detPageDef"/>
+    <page id="hr_oikt_project_no1_view_MjestoTroskaPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.MjestoTroskaPageDef"/>
+    <page id="hr_oikt_project_no1_view_MjestoTroska_detPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.MjestoTroska_detPageDef"/>
+    <page id="hr_oikt_project_no1_view_artikli_btf_task_flow_definition_DeletePageDef"
+          path="hr.oikt.project_no1.view.pageDefs.artikli_btf_task_flow_definition_DeletePageDef"/>
+    <page id="hr_oikt_project_no1_view_dobavljaci_btf_dobavljaci_btf_DeletePageDef"
+          path="hr.oikt.project_no1.view.pageDefs.dobavljaci_btf_dobavljaci_btf_DeletePageDef"/>
+    <page id="hr_oikt_project_no1_view_MjestoTroska_btf_MjestoTroska_btf_DeletePageDef"
+          path="hr.oikt.project_no1.view.pageDefs.MjestoTroska_btf_MjestoTroska_btf_DeletePageDef"/>
+    <page id="hr_oikt_project_no1_view_Skladiste_btf_Skladiste_btf_DeletePageDef"
+          path="hr.oikt.project_no1.view.pageDefs.Skladiste_btf_Skladiste_btf_DeletePageDef"/>
+    <page id="hr_oikt_project_no1_view_Dobavljaci_IzmjenaPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.Dobavljaci_IzmjenaPageDef"/>
+    <page id="hr_oikt_project_no1_view_ZalihePageDef" path="hr.oikt.project_no1.view.pageDefs.ZalihePageDef"/>
+    <page id="hr_oikt_project_no1_view_artikli_btf_task_flow_definition_CreateInsertPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.artikli_btf_task_flow_definition_CreateInsertPageDef"/>
+    <page id="hr_oikt_project_no1_view_dobavljaci_btf_dobavljaci_btf_CreateInsertPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.dobavljaci_btf_dobavljaci_btf_CreateInsertPageDef"/>
+    <page id="hr_oikt_project_no1_view_MjestoTroska_btf_MjestoTroska_btf_CreateInsertPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.MjestoTroska_btf_MjestoTroska_btf_CreateInsertPageDef"/>
+    <page id="hr_oikt_project_no1_view_Skladiste_btf_Skladiste_btf_CreateInsertPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.Skladiste_btf_Skladiste_btf_CreateInsertPageDef"/>
+    <page id="hr_oikt_project_no1_view_Zaglavlje_primPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.Zaglavlje_primPageDef"/>
+    <page id="hr_oikt_project_no1_view_Zaglavlje_prim_formPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.Zaglavlje_prim_formPageDef"/>
+    <page id="hr_oikt_project_no1_view_primke_btf_primke_btf_CreateInsertPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.primke_btf_primke_btf_CreateInsertPageDef"/>
+    <page id="hr_oikt_project_no1_view_Prim_StavkePageDef" path="hr.oikt.project_no1.view.pageDefs.Prim_StavkePageDef"/>
+    <page id="hr_oikt_project_no1_view_prim_zag_btf_primke_btf_CommitPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.prim_zag_btf_primke_btf_CommitPageDef"/>
+    <page id="hr_oikt_project_no1_view_Stavke_formPageDef" path="hr.oikt.project_no1.view.pageDefs.Stavke_formPageDef"/>
+    <page id="hr_oikt_project_no1_view_Stavke_primPageDef" path="hr.oikt.project_no1.view.pageDefs.Stavke_primPageDef"/>
+    <page id="hr_oikt_project_no1_view_Stavke_prim_formPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.Stavke_prim_formPageDef"/>
+    <page id="hr_oikt_project_no1_view_Stavke_form_primPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.Stavke_form_primPageDef"/>
+    <page id="hr_oikt_project_no1_view_Prim_Stavke_formPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.Prim_Stavke_formPageDef"/>
+    <page id="hr_oikt_project_no1_view_prim_stav_btf_prim_stav_btf_CreateInsertPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.prim_stav_btf_prim_stav_btf_CreateInsertPageDef"/>
+    <page id="hr_oikt_project_no1_view_prim_stav_btf_prim_stav_btf_CommitPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.prim_stav_btf_prim_stav_btf_CommitPageDef"/>
+    <page id="hr_oikt_project_no1_view_prim_zag_btf_primke_btf_DeletePageDef"
+          path="hr.oikt.project_no1.view.pageDefs.prim_zag_btf_primke_btf_DeletePageDef"/>
+    <page id="hr_oikt_project_no1_view_prim_stav_btf_prim_stav_btf_DeletePageDef"
+          path="hr.oikt.project_no1.view.pageDefs.prim_stav_btf_prim_stav_btf_DeletePageDef"/>
+    <page id="hr_oikt_project_no1_view_Izd_ZagPageDef" path="hr.oikt.project_no1.view.pageDefs.Izd_ZagPageDef"/>
+    <page id="hr_oikt_project_no1_view_izd_zag_btf_izd_zag_btf_CreateInsertPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.izd_zag_btf_izd_zag_btf_CreateInsertPageDef"/>
+    <page id="hr_oikt_project_no1_view_izd_zag_btf_izd_zag_btf_DeletePageDef"
+          path="hr.oikt.project_no1.view.pageDefs.izd_zag_btf_izd_zag_btf_DeletePageDef"/>
+    <page id="hr_oikt_project_no1_view_izd_zag_btf_izd_zag_btf_CommitPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.izd_zag_btf_izd_zag_btf_CommitPageDef"/>
+    <page id="hr_oikt_project_no1_view_Izd_Zaglavlje_formPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.Izd_Zaglavlje_formPageDef"/>
+    <page id="hr_oikt_project_no1_view_izd_stav_btf_izd_stav_btf_CreateInsertPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.izd_stav_btf_izd_stav_btf_CreateInsertPageDef"/>
+    <page id="hr_oikt_project_no1_view_izd_stav_btf_izd_stav_btf_DeletePageDef"
+          path="hr.oikt.project_no1.view.pageDefs.izd_stav_btf_izd_stav_btf_DeletePageDef"/>
+    <page id="hr_oikt_project_no1_view_izd_stav_btf_izd_stav_btf_CommitPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.izd_stav_btf_izd_stav_btf_CommitPageDef"/>
+    <page id="hr_oikt_project_no1_view_Izd_StavkaPageDef" path="hr.oikt.project_no1.view.pageDefs.Izd_StavkaPageDef"/>
+    <page id="hr_oikt_project_no1_view_Izd_Stavka_formPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.Izd_Stavka_formPageDef"/>
+    <page id="hr_oikt_project_no1_view_artikli_btf_task_flow_definition_RollbackPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.artikli_btf_task_flow_definition_RollbackPageDef"/>
+    <page id="hr_oikt_project_no1_view_dobavljaci_btf_dobavljaci_btf_RollbackPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.dobavljaci_btf_dobavljaci_btf_RollbackPageDef"/>
+    <page id="hr_oikt_project_no1_view_izd_stav_btf_izd_stav_btf_RollbackPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.izd_stav_btf_izd_stav_btf_RollbackPageDef"/>
+    <page id="hr_oikt_project_no1_view_izd_zag_btf_izd_zag_btf_RollbackPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.izd_zag_btf_izd_zag_btf_RollbackPageDef"/>
+    <page id="hr_oikt_project_no1_view_MjestoTroska_btf_MjestoTroska_btf_RollbackPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.MjestoTroska_btf_MjestoTroska_btf_RollbackPageDef"/>
+    <page id="hr_oikt_project_no1_view_prim_stav_btf_prim_stav_btf_RollbackPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.prim_stav_btf_prim_stav_btf_RollbackPageDef"/>
+    <page id="hr_oikt_project_no1_view_prim_zag_btf_primke_btf_RollbackPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.prim_zag_btf_primke_btf_RollbackPageDef"/>
+    <page id="hr_oikt_project_no1_view_Skladiste_btf_Skladiste_btf_RollbackPageDef"
+          path="hr.oikt.project_no1.view.pageDefs.Skladiste_btf_Skladiste_btf_RollbackPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="no1_AMDataControl" Package="hr.oikt.project_no1.model.am"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="no1_AMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
